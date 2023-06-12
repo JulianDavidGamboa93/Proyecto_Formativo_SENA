@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/reset.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/Products.css">
+    <title>Products</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>logo</h1>
+    </header>
+    <div class="container-title">Zapatos</div>
+    <main>
+        <div class="container-img">
+            <img src="../Img/Zapatos1.jpg" alt="Zapatos1">
+        </div>
+        <div class="container-info-product">
+            <div class="container-price">
+                <span>$90.000</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="container-details-product">
+                <div class="form-group">
+                    <label for="colour">Color</label>
+                    <select name="colour" id="colour">
+                        <option disabled selected value="">Escoge una opcion</option>
+                        <option value="pink">Rojo</option>
+                        <option value="blue">Azul</option>
+                        <option value="yellow">Amarillo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="size">Talla</label>
+            <select name="size" id="size">
+                <option disabled selected value="">Escoge una opcion</option>
+                <option value="pink">40</option>
+                <option value="blue">42</option>
+                <option value="yellow">43</option>
+                <option value="yellow">44</option>
+            </select>
+        </div>
+        <button class="btn-clean">limpiar</button>
+        </div>
+        <div class="container-add-cart">
+            <div class="container-quantity">
+                <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
+                <div class="btn-increment-decrement">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            <button class="btn-add-to-cart">
+                <i class="fa-solid fa-plus"></i>
+                agregar al carrito
+            </button>
+        </div>
+        <div class="container-description">
+            <div class="tittle-description">
+                <h4>Descripcion</h4>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="text-description">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, accusamus placeat.
+                Nihil at exercitationem maxime facilis placeat officia neque libero ut sequi. Asperiores
+                ipsam minus aut eaque tempora illum distinctio.</p>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <p>footer</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
+    <script src="../JS/Products.js"></script>
 </body>
+
 </html>
