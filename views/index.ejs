@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./Img/Aurora Cafe Logo.png" type="image/x-icon">
+    <title>Cafe Aurora</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="./Img/Aurora Cafe Logo.png" alt="Logo-aurora">
+            <h2 class="nombre-empresa">Café Aurora</h2>
+        </a>
+        <nav>
+            <a href="" class="nav-link">Inicio</a>
+            <a href="" class="nav-link">Nosotros</a>
+            <a href="" class="nav-link">Productos</a>
+            <a href="" class="nav-link">Contactenos</a>
+        </nav>
+    </header>
+
+    <section id="slider">
+        <div class="container-all">
+            <input type="radio" id="1" name="image-slide" hidden>
+            <input type="radio" id="2" name="image-slide" hidden>
+            <input type="radio" id="3" name="image-slide" hidden>
+            <input type="radio" id="4" name="image-slide" hidden>
+            <input type="radio" id="5" name="image-slide" hidden>
+
+            <div class="slide">
+                <div class="item-slide">
+                    <img src="./Img/pexels-michael-burrows-7125539.webp" alt="image-1">
+                </div>
+
+                <div class="item-slide">
+                    <img src="./img/pexels-michael-burrows-7125739.webp" alt="image-2">
+                </div>
+
+                <div class="item-slide">
+                    <img src="./Img/pexels-michael-burrows-7125766.webp" alt="image-3">
+                </div>
+
+                <div class="item-slide">
+                    <img src="Img/pexels-burak-evlivan-11069896.webp" alt="image-4">
+                </div>
+
+                <div class="item-slide">
+                    <img src="Img/pexels-elina-sazonova-1907071.webp" alt="image-5">
+                </div>
+                
+            
+            </div>
+
+            <div class="pagination">
+                <label for="1" class="pagination-item">
+                    <img src="./Img/pexels-michael-burrows-7125539.webp" alt="image-1">
+                </label>
+
+                <label for="2" class="pagination-item">
+                    <img src="./img/pexels-michael-burrows-7125739.webp" alt="image-2">
+                </label>
+
+                <label for="3" class="pagination-item">
+                    <img src="./Img/pexels-michael-burrows-7125766.webp" alt="image-3">
+                </label>
+
+                <label for="4" class="pagination-item">
+                    <img src="Img/pexels-burak-evlivan-11069896.webp" alt="image-4">
+                </label>
+
+                <label for="5" class="pagination-item">
+                    <img src="Img/pexels-elina-sazonova-1907071.webp" alt="image-5">
+                </label>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
