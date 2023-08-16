@@ -2,81 +2,66 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/reset.css">
+    <title>ToliCafes S.A.S</title>
+    <!--Custom CSS-->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./Img/Aurora Cafe Logo.png" type="image/x-icon">
-    <title>Cafe Aurora</title>
+    <!--Fabicon-->
+    <link rel="icon" href="Img/Logos/Bean Heart Logo.png" type="image/x-icon">
+    <!--FontAwsome-->
+    <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo">
-            <img src="./Img/Aurora Cafe Logo.png" alt="Logo-aurora">
-            <h2 class="nombre-empresa">Café Aurora</h2>
-        </a>
-        <nav>
-            <a href="" class="nav-link">Inicio</a>
-            <a href="" class="nav-link">Nosotros</a>
-            <a href="" class="nav-link">Productos</a>
-            <a href="" class="nav-link">Contactenos</a>
-        </nav>
-    </header>
-
-    <section id="slider">
-        <div class="container-all">
-            <input type="radio" id="1" name="image-slide" hidden>
-            <input type="radio" id="2" name="image-slide" hidden>
-            <input type="radio" id="3" name="image-slide" hidden>
-            <input type="radio" id="4" name="image-slide" hidden>
-            <input type="radio" id="5" name="image-slide" hidden>
-
-            <div class="slide">
-                <div class="item-slide">
-                    <img src="./Img/pexels-michael-burrows-7125539.webp" alt="image-1">
-                </div>
-
-                <div class="item-slide">
-                    <img src="./img/pexels-michael-burrows-7125739.webp" alt="image-2">
-                </div>
-
-                <div class="item-slide">
-                    <img src="./Img/pexels-michael-burrows-7125766.webp" alt="image-3">
-                </div>
-
-                <div class="item-slide">
-                    <img src="Img/pexels-burak-evlivan-11069896.webp" alt="image-4">
-                </div>
-
-                <div class="item-slide">
-                    <img src="Img/pexels-elina-sazonova-1907071.webp" alt="image-5">
-                </div>
-                
-            
-            </div>
-
-            <div class="pagination">
-                <label for="1" class="pagination-item">
-                    <img src="./Img/pexels-michael-burrows-7125539.webp" alt="image-1">
-                </label>
-
-                <label for="2" class="pagination-item">
-                    <img src="./img/pexels-michael-burrows-7125739.webp" alt="image-2">
-                </label>
-
-                <label for="3" class="pagination-item">
-                    <img src="./Img/pexels-michael-burrows-7125766.webp" alt="image-3">
-                </label>
-
-                <label for="4" class="pagination-item">
-                    <img src="Img/pexels-burak-evlivan-11069896.webp" alt="image-4">
-                </label>
-
-                <label for="5" class="pagination-item">
-                    <img src="Img/pexels-elina-sazonova-1907071.webp" alt="image-5">
-                </label>
-            </div>
+    <section id="header">
+        <a href="#"><img src="Img/Logos/Tolicafes Logo.png" class="logo" alt="Tolicafes"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Inicio</a></li>
+                <li><a href="Pages/Tienda.html">Tienda</a></li>
+                <li><a href="Pages/Nosotros.html">Nosotros</a></li>
+                <li><a href="Pages/Contactenos.html">Contactenos</a></li>
+                <li><a href="Pages/Registro.html"><i class="fa-solid fa-right-to-bracket"></i> Registrarse</a></li>
+                <li><a href="Pages/Sesion.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesion</a></li>
+                <li><a href="Pages/Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
         </div>
     </section>
+
+    <section id="hero">
+        <h4>Cafe 100% Tolimense</h4>
+        <h2>Organico y delicioso</h2>
+        <h1>Para los Tolimenses</h1>
+        <p>Reserva ahora y obten un 60% de descuento!</p>
+        <button>Reservarlo ya</button>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="Img/features/f1.png" alt="">
+            <h6>Pagos moviles</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Img/features/f2.png" alt="">
+            <h6>Entrega rapida</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Img/features/f3.png" alt="">
+            <h6>Ahorra dinero</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Img/features/f4.png" alt="">
+            <h6>Promociones</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Img/features/f5.png" alt="">
+            <h6>Acuerdos seguros</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Img/features/f6.png" alt="">
+            <h6>Ayuda 24/7</h6>
+        </div>
+    </section>
+    <!--Custom JS script-->
+    <script src="script.js"></script>
 </body>
 </html>
