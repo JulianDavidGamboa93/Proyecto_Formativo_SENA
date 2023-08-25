@@ -708,7 +708,7 @@ footer .copyright{
 }
 
 
-/* About Us */
+/* About Page */
 
 #page-header.about-header{
   background-image: url('./Img/Nosotros/a1.jpeg');
@@ -750,6 +750,120 @@ footer .copyright{
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+
+/* Contact Page */
+
+#contact-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Cambio a space-between */
+}
+
+
+#contact-details .details{
+  width: 40%;
+} 
+
+#contact-details .details span,
+#form-details form span{
+  font-size: 12px;
+}
+
+#contact-details .details h2,
+#form-details form h2{
+  font-size: 26px;
+  line-height: 35px;
+  padding: 20px 0;
+}
+
+#contact-details .details h3{
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+#contact-details .details li{
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+#contact-details .details  li i{
+  margin: 0;
+  padding-right: 14px;
+}
+
+#contact-details .details  li p{
+  margin: 0;
+  font-size: 14px;
+}
+
+#contact-details .map{
+  width: 55%;
+  height: 400px;
+  margin-left: 40em;
+  margin-top: -20em
+}
+
+#contact-details .nmap iframe{
+  width: 100%;
+  height: 100%;
+}
+
+#form-details{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 80px; border: 1px solid #e1e1e1;
+}
+
+
+#form-details form{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea{
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  margin: 20px;
+  border:  1px solid #e1e1e1;
+}
+
+#form-details form button{
+  background-color: #088178;
+  color: white;
+}
+
+#form-details .people div{
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+#form-details .people div img{
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+#form-details .people div p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 25px;
+}
+
+#form-details .people div p span{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
 }
 
 
@@ -864,24 +978,37 @@ footer .copyright{
     width: 100%;
   }
 
-  /* About Page */
-
-  #about-head{
-    flex-direction: column;
-  }
-
-  #about-head img{
-    width: 100%;
-    margin-bottom: 20px;
-  }
+#contact-details{
+  justify-content: flex-start;
+}
   
-  #about-head div {
-    padding-left: 0px;
-  }
+#about-head img{
+  display: none;
+}
 
-  #about-video .video{
-    width: 100%;
-  }
+/*Contact Page*/
+
+
+#contact-details{
+  flex-direction: column;
+}
+
+#contact-details .map{
+  display: none;
+}
+
+#form-details{
+  padding: 40px;
+}
+
+#form-details form{
+  width: 50%;
+}
+
+#form-details .people {
+  margin-left: 30px ;
+}
+
 }
 
 @media (max-width: 477px){
@@ -976,6 +1103,7 @@ footer .copyright{
   }
 
   #about-head img{
+    display: flex;
     width: 100%;
     margin-bottom: 20px;
   }
@@ -986,6 +1114,34 @@ footer .copyright{
 
   #about-video .video{
     width: 100%;
+  }
+
+  /*Contact Page*/
+
+  #contact-details{
+    flex-direction: column;
+  }
+
+  #contact-details .details{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #contact-details .map{
+    display: none;
+  }
+
+  #form-details {
+    margin: 10px;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+  }
+
+  #form-details form{
+    width: 100%;
+    margin-bottom: 30px;
+
   }
 
 }
