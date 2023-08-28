@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&family=League+Spartan:wght@300&family=Pacifico&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -105,13 +107,27 @@ body{
   color: black;
 }
 
-#header a img{
-  height: 2em;
+#header a {
+  font-weight: 600;
+  font-size: 36px;
 }
 
-#header a span{
-  color: #820000;
+#header .header-logo {
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Great Vibes', cursive;
+  font-family: 'League Spartan', sans-serif;
+  font-family: 'Pacifico', cursive;
 }
+
+#header a:hover {
+  color: #088178;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
 #navbar{
   display: flex;
   align-items: center;
@@ -137,12 +153,12 @@ body{
 }
 
 #navbar li a:hover{
-  color: #820000;
+  color: #088178;
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-  color: #820000;
+  color: #088178;
 }
 
 #navbar li a.active::after,
@@ -150,7 +166,7 @@ body{
   content: "";
   width: 30%;
   height: 2px;
-  background-color: #820000;
+  background-color: #088178;
   position: absolute;
   bottom: -4px;
   left: 20px;
@@ -164,6 +180,8 @@ body{
 #close{
   display: none;
 }
+
+
 
 /*Home Page*/
 
@@ -547,9 +565,16 @@ footer .col{
   padding-bottom: 20px;
 }
 
-footer .logo{
+footer .logo-footer{
   margin-bottom: 30px;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Great Vibes', cursive;
+  font-family: 'League Spartan', sans-serif;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  color: #000;
 }
+
 
 footer h4{
   font-size: 14px;
@@ -867,6 +892,127 @@ footer .copyright{
 }
 
 
+/*Cart Page*/
+
+#cart table {
+  overflow-x: auto;
+}
+
+#cart table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: break-spaces;
+}
+
+#cart table img{
+  width: 70px;
+}
+
+#cart table tr td a i{
+  color: black;
+}
+
+#cart table td:nth-child(1){
+  width: 100%;
+  text-align: center;
+}
+
+#cart table td:nth-child(2){
+  width: 150%;
+  text-align: center;
+}
+
+#cart table td:nth-child(3){
+  width: 250%;
+  text-align: center;
+}
+
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6){
+  width: 150%;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead{
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td{
+font-weight: 700;
+text-transform: uppercase;
+font-size: 13px;
+padding: 18px 0;
+}
+
+#cart table tbody tr td {
+  padding-top: 15px;
+}
+
+#cart table tbody td{
+  font-size: 13px;
+}
+
+#cart-add{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#cupon{
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#cupon h3,
+#Subtotal h3{
+  padding-bottom: 15px;
+}
+
+#cupon input{
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #e2e9e1
+}
+
+#cupon button,
+#Subtotal button{
+  background-color: #088178;
+  color: white;
+  padding: 12px 20px;
+}
+
+#Subtotal{
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;padding: 30px;
+  
+}
+
+#Subtotal table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#Subtotal table td{
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
+
 
 
 /* Starts Media Query Responsive*/
@@ -1009,6 +1155,14 @@ footer .copyright{
   margin-left: 30px ;
 }
 
+/* Cart Page */
+
+#cart{
+  overflow-x: auto;
+}
+
+#cart{}
+
 }
 
 @media (max-width: 477px){
@@ -1142,6 +1296,33 @@ footer .copyright{
     width: 100%;
     margin-bottom: 30px;
 
+  }
+
+  /* Cart Page */
+  #cart table{
+    white-space: normal;
+
+  }
+
+  #cart table td{
+    padding-right: 10em;
+  }
+
+  #cart img{
+    display: none;
+  }
+
+  #cart-add{
+    flex-direction: column;
+  }
+
+  #cupon {
+    width: 100%;
+  }
+
+  #Subtotal {
+    width: 100%;
+    padding: 20px;
   }
 
 }
