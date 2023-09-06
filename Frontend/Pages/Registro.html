@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Register.css">
+    <title>Inicio de sesion</title>
+</head>
+<body>
+    
+    <form class="form">
+        <a href="../index.html" class="header-logo">Bellolino</a>
+        <h2 class="form-title">Registro</h2>
+        <p class="form-paragraph">¿Ya tienes cuenta? <a href="Sesion.html" class="form-link">Entra aqui</a></p>
+
+        <div class="form-container">
+            <div class="form-group">
+                <input type="text" id="user" class="form-input" placeholder="  ">
+                <label for="user" class="form-label">Usuario</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-input" placeholder="  ">
+                <label for="password" class="form-label">contraseña</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" id="names" class="form-input" placeholder="  ">
+                <label for="name" class="form-label">Nombres</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" id="lastname" class="form-input" placeholder="  ">
+                <label for="Lastname" class="form-label">Apellidos</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input type="date" id="birthdate" class="form-input" placeholder="  ">
+                <label for="birthdate" class="form-label">Fecha de nacimiento</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <label for="genero" >Género</label>
+                <select id="genero" name="genero"  class="form-input">
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="no_definido">No Definido</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" id="Cellphone" class="form-input" placeholder="  ">
+                <label for="Chellphone" class="form-label">Celular</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="terms" class="form-checkbox">
+                <label for="terms" >Acepto los <a href="#">términos y condiciones</a></label>
+            </div>
+              
+            <input type="submit" class="form-submit" value="Registrarse">
+        </div>
+    </form>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/Register.css"> 
     <title>Inicio de sesion</title>
 </head>
 <body>
     <form class="form">
+        <a href="../index.html" class="header-logo">Bellolino</a>
         <h2 class="form-title">Iniciar Sesion</h2>
-        <p class="form-paragraph">¿Aun no tienes cuenta? <a href="#" class="form-link">Entra aqui</a></p>
+        <p class="form-paragraph">¿Aun no tienes cuenta? <a href="Registro.html" class="form-link">Entra aqui</a></p>
 
         <div class="form-container">
             <div class="form-group">
                 <input type="text" id="user" class="form-input" placeholder="  ">
-                <label for="user" class="form-label">Usuario:</label>
+                <label for="user" class="form-label">Usuario</label>
                 <span class="form-line"></span>
             </div>
             <div class="form-group">
-                <input type="text" id="password" class="form-input" placeholder="  ">
-                <label for="password" class="form-label">Contraseña:</label>
+                <input type="password" id="password" class="form-input" placeholder="  ">
+                <label for="password" class="form-label">Contraseña</label>
                 <span class="form-line"></span>
             </div>
 
             <input type="submit" class="form-submit" value="entrar">
         </div>
+
+        <script src="../script.js"></script>
     </form>
 </body>
 </html>
