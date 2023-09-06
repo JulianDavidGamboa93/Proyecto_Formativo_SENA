@@ -7,5 +7,8 @@ El proyecto formativo que estas viendo se trata de un e-commerce creado por noso
 
 
 ANDRES: Una vez el usuario registrado en la pagina, en el header los botones o apartados de inicar sesion y registrar ya no se vean visibles.
+TODOS: Desplegar la API para que envie la informacion a travez de los diferentes formularios que tengan el front.
+
+Crear un formulario con el metodo POST en la pagina de registro en el que este me guarde la informacion del usuario en la base de datos.
 
 
