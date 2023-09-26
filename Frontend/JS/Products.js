@@ -16,6 +16,7 @@ try {
                 let stars = document.createElement('i');
                 let prodPrice = document.createElement('h4');
                 let prodCart = document.createElement('a');
+                let cartIcon = document.createElement('i');
 
                 producto.setAttribute('class', 'pro');
                 img.setAttribute('class', 'prod-img');
@@ -30,9 +31,20 @@ try {
                 prodPrice.setAttribute('class', 'prod-price');
                 prodPrice.innerHTML = datos[contador].precio + "$ COP";
                 prodCart.setAttribute('class', 'cart');
+                cartIcon.setAttribute('class', 'fa-solid fa-cart-arrow-down');
+
+                for (let i = 0; i < 5; i++) {
+                    // Crea un elemento <i> (que generalmente se usa para íconos en Font Awesome)
+                    const star = document.createElement('i');
+                    
+                    // Establece las clases para la estrella
+                    star.setAttribute('class', 'fa-solid fa-star stars');
+                    
+                    // Agrega la estrella al elemento 'starsDiv'
+                    starsDiv.appendChild(star);
+                }
 
                 // Adjuntar elementos a sus respectivos padres
-                starsDiv.appendChild(stars);
                 description.appendChild(prodType);
                 description.appendChild(prodTitle);
                 description.appendChild(starsDiv);
@@ -40,6 +52,7 @@ try {
                 producto.appendChild(img);
                 producto.appendChild(description);
                 producto.appendChild(prodCart);
+                prodCart.appendChild(cartIcon);
 
                 proContainer.appendChild(producto);
 
