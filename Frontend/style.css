@@ -356,7 +356,15 @@ body{
   color: rgb(243, 181, 25);
 }
 
-#product1 .pro .des h4{
+
+#product1 .pro .des h4 span{
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #088178;
+}
+
+#product1 .pro .des h4 .prod-price{
   padding-top: 7px;
   font-size: 15px;
   font-weight: 700;
@@ -1170,7 +1178,6 @@ padding: 18px 0;
   overflow-x: auto;
 }
 
-#cart{}
 
 }
 

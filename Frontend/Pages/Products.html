@@ -8,7 +8,7 @@
     <!--Custom CSS-->
     <link rel="stylesheet" href="../style.css">
     <!--Fabicon-->
-    <link rel="icon" href="../Img/Logos/logo4.png" type="image/x-icon">
+    <link rel="icon" href="../Img/Logos/Fabicon.png" type="image/x-icon">
     <!--FontAwsome-->
     <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
 </head>
@@ -19,9 +19,9 @@
         <div>
             <ul id="navbar">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="Tienda.html">Tienda</a></li>
+                <li><a class="active" href="Tienda.html">Tienda</a></li>
                 <li><a href="Nosotros.html">Nosotros</a></li>
-                <li><a class="active" href="Contactenos.html">Contactenos</a></li>
+                <li><a href="Contactenos.html">Contactenos</a></li>
                 <li><a href="Registro.html"><i class="fa-solid fa-right-to-bracket"></i> Registrarse</a></li>
                 <li><a href="Sesion.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesion</a></li>
                 <li id="lg-cart"><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
@@ -34,76 +34,19 @@
         </div>
     </section>
 
-    <section id="page-header" class="about-header">
-        <h2>Visitanos!</h2>
-        <p>Dejanos un mensaje, nos encataria escucharte!</p>
+    <section id="page-header">
+        <h2>Organico y delicioso</h2>
+        <p>Reserva ahora y obten un 60% de descuento!</p>
     </section>
 
-    <section id="contact-details" class="section-p1" >
-        <div class="details">
-            <span>Escribenos!</span>
-            <h2>Visita una de nuestras sucursales o contactanos!</h2>
-            <h3>Sucursal principal</h3>
-            <div>
-                <li>
-                    <i class="fa-regular fa-map"></i>
-                    <p>Cra. 45 Sur #1255 · 82709600, Ibagué, Tolima</p>
-                </li>
-                <li>
-                    <i class="fa-regular fa-envelope"></i>
-                    <p>jdgamboa93@soy.sena.edu.co</p>
-                </li>
-                <li>
-                    <i class="fa-solid fa-phone"></i>
-                    <p>(571) 3430111 - Línea gratuita 18000 910270</p>
-                </li>
-                <li>
-                    <i class="fa-regular fa-clock"></i>
-                    <p>8:00 AM - 5:30 PM Lunes a Viernes.</p>
-                </li>
-            </div>
-
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8428.859917046668!2d
-                    -75.21497680945275!3d4.431229563514856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
-                    1s0x8e38c4dd618bafa1%3A0x2fc666b9c995fe6e!2sSena%20Ibague!5e0!3m2!1ses-419!2sco!4v169297
-                    7997156!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen=""
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            <!-- Tu contenedor de productos va aquí -->
         </div>
+        
     </section>
 
-    <section id="form-details">
-        <form action="">
-            <span>Dejanos un mensaje</span>
-            <h2>Queremos escucharte</h2>
-            <input type="text" placeholder="Tu nombre">
-            <input type="text" placeholder="Tu e-mail">
-            <input type="text" placeholder="Motivo">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
-            <button class="normal">Enviar</button>
-        </form>
-
-        <div class="people">
-            <div>
-                <img src="../Img/people/1.png" alt="">
-                <p><span>Jorge Cazanares</span> Director General <br>Celular:  
-                3102679433  <br> Email: JorgeCazanares@example.com</p>
-            </div>
-            <div>
-                <img src="../Img/people/2.png" alt="">
-                <p><span>Andres Alvarez</span> Programador Senior <br>Celular:  
-                3054332293  <br> Email: AndresAlvarez@example.com</p>
-            </div>
-            <div>
-                <img src="../Img/people/3.png" alt="">
-                <p><span>Ana Hernandez</span> Directora de Marketing <br>Celular:  
-                3166553322  <br> Email: AnaHernandez@example.com</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="newsletter" class="section-p1 section-m1" >
+    <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
             <h4>Registrate en nuestro Newsletters.</h4>
             <p>Recibe un E-mail acerca de todos nuestros productos y <span>ofertas.</span></p>
@@ -165,6 +108,7 @@
     </footer>
     <!--Custom JS script-->
     <script src="../script.js"></script>
+    <script src="../JS/Products.js"></script>
 </body>
 
 </html>
