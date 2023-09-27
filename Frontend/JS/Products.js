@@ -1,4 +1,5 @@
 const proContainer = document.querySelector('.pro-container');
+const tableCart = document.querySelector('.table-cart');
 
 try {
     fetch('../Products/data.json')
@@ -31,6 +32,7 @@ try {
                 prodPrice.setAttribute('class', 'prod-price');
                 prodPrice.innerHTML = datos[contador].precio + "$ COP";
                 prodCart.setAttribute('class', 'cart');
+                prodCart.setAttribute('data-product-id', contador);
                 cartIcon.setAttribute('class', 'fa-solid fa-cart-arrow-down');
 
                 for (let i = 0; i < 5; i++) {
@@ -56,8 +58,42 @@ try {
 
                 proContainer.appendChild(producto);
 
+                prodCart.addEventListener('click', (e) => {
+                    const productId = e.currentTarget.getAttribute('data-product-id');
+                    const tr = document.createElement('tr');
+                    const tdNames = document.createElement('td')
+                    const tdPrices = document.createElement('td');
+                    const tdQuantity = document.createElement('td');
+                    const tdGrams = document.createElement('td');
+                    const tdBeans = document.createElement('td');
+
+                    tdNames.setAttribute('class', 'objt-tb')
+                    tdPrices.setAttribute('class', 'objt-tb')
+
+
+                    tdNames.innerHTML = datos[productId].nombre
+                    tdPrices.innerHTML = datos[productId].precio
+                    tdQuantity.innerHTML = datos[productId].cantidad
+                    tdGrams.innerHTML = datos[productId].gramos
+                    tdBeans.innerHTML = datos[productId].grano
+                    
+
+                    tr.appendChild(tdNames)
+                    tr.appendChild(tdPrices)
+                    tr.appendChild(tdQuantity)
+                    tr.appendChild(tdGrams)
+                    tr.appendChild(tdBeans)
+                    tableCart.appendChild(tr);
+                    
+                    // Obtiene el valor del atributo personalizado 'data-product-id' para saber en cuál producto se hizo clic
+                    
+                    alert('Hola haz tocado el elemento ' + productId);
+                });
+
                 contador++;
             }
+
+
         });
 } catch (error) {
     console.log(error);

@@ -1,0 +1,17 @@
+table {
+    border: solid 2px #000;
+}
+
+
+#cart-table .add-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+table tr td .tt {
+    width: 140px;
+    text-align: center;
+
+}

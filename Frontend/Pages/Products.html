@@ -1,114 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToliCafes S.A.S</title>
     <!--Custom CSS-->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../CSS/Cartlist.css" />
     <!--Fabicon-->
-    <link rel="icon" href="../Img/Logos/Fabicon.png" type="image/x-icon">
+    <link rel="icon" href="../Img/Logos/Fabicon.png" type="image/x-icon" />
     <!--FontAwsome-->
-    <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://kit.fontawesome.com/2538a9edca.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <section id="header">
-        <a href="../index.html" class="header-logo">Bellolino</a>
-        <div>
-            <ul id="navbar">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a class="active" href="Tienda.html">Tienda</a></li>
-                <li><a href="Nosotros.html">Nosotros</a></li>
-                <li><a href="Contactenos.html">Contactenos</a></li>
-                <li><a href="Registro.html"><i class="fa-solid fa-right-to-bracket"></i> Registrarse</a></li>
-                <li><a href="Sesion.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesion</a></li>
-                <li id="lg-cart"><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
-            </ul>
-        </div>
-        <div id="mobile">
+      <a href="../index.html" class="header-logo">Bellolino</a>
+      <div>
+        <ul id="navbar">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a class="active" href="Tienda.html">Tienda</a></li>
+          <li><a href="Nosotros.html">Nosotros</a></li>
+          <li><a href="Contactenos.html">Contactenos</a></li>
+          <li>
+            <a href="Registro.html"
+              ><i class="fa-solid fa-right-to-bracket"></i> Registrarse</a
+            >
+          </li>
+          <li>
+            <a href="Sesion.html"
+              ><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar
+              Sesion</a
+            >
+          </li>
+          <li id="lg-cart">
             <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <i id="bar" class="fa-solid fa-bars"></i>
-        </div>
+          </li>
+          <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+      </div>
     </section>
 
     <section id="page-header">
-        <h2>Organico y delicioso</h2>
-        <p>Reserva ahora y obten un 60% de descuento!</p>
+      <h2>Organico y delicioso</h2>
+      <p>Reserva ahora y obten un 60% de descuento!</p>
     </section>
 
-    <section id="product1" class="section-p1">
-        <div class="pro-container">
-            <!-- Tu contenedor de productos va aquí -->
+    <section id="cart-table">
+        <div class="add-cart">
+          <table class="table-cart">
+            <tr>
+              <td><p class="tt">Nombre</p></td>
+              <td><p class="tt">Precio</p></td>
+              <td><p class="tt">Cantidad</p></td>
+              <td><p class="tt">Gramos</p></td>
+              <td><p class="tt">Granos</p></td>
+            </tr>
+          </table>
         </div>
-        
+      </section>
+
+    <section id="product1" class="section-p1">
+      <div class="pro-container">
+        <!-- Tu contenedor de productos va aquí -->
+      </div>
     </section>
 
     <section id="newsletter" class="section-p1 section-m1">
-        <div class="newstext">
-            <h4>Registrate en nuestro Newsletters.</h4>
-            <p>Recibe un E-mail acerca de todos nuestros productos y <span>ofertas.</span></p>
-        </div>
-        <div class="form">
-            <input type="text" placeholder="Tu correo electronico">
-            <button class="normal">Registrarse</button>
-        </div>
+      <div class="newstext">
+        <h4>Registrate en nuestro Newsletters.</h4>
+        <p>
+          Recibe un E-mail acerca de todos nuestros productos y
+          <span>ofertas.</span>
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Tu correo electronico" />
+        <button class="normal">Registrarse</button>
+      </div>
     </section>
 
     <footer class="section-p1">
-        <div class="col">
-            <p class="logo-footer">Bellolino</p>
-            <h4>Contacto</h4>
-            <p> <strong>Direccion:</strong> Cra. 45 Sur #1255 · 82709600</p>
-            <p> <strong>Celulares:</strong>(571) 3430111 - Línea gratuita 18000 910270</p>
-            <p> <strong>Horarios:</strong> 8:00 AM - 5:30 PM Lunes a Viernes.</p>
-            <div class="follow">
-                <h4>Siguenos!</h4>
-                <div class="icon">
-                    <a href="https://www.facebook.com/SENATolima/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/SENA_Tolima" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/senacompetenciaslaborales/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:jdgamboa93@soy.sena.edu.co"><i class="fa-regular fa-envelope"></i></a>
-                </div>
-            </div>
+      <div class="col">
+        <p class="logo-footer">Bellolino</p>
+        <h4>Contacto</h4>
+        <p><strong>Direccion:</strong> Cra. 45 Sur #1255 · 82709600</p>
+        <p>
+          <strong>Celulares:</strong>(571) 3430111 - Línea gratuita 18000 910270
+        </p>
+        <p><strong>Horarios:</strong> 8:00 AM - 5:30 PM Lunes a Viernes.</p>
+        <div class="follow">
+          <h4>Siguenos!</h4>
+          <div class="icon">
+            <a
+              href="https://www.facebook.com/SENATolima/?locale=es_LA"
+              target="_blank"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com/SENA_Tolima" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/senacompetenciaslaborales/"
+              target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="mailto:jdgamboa93@soy.sena.edu.co"
+              ><i class="fa-regular fa-envelope"></i
+            ></a>
+          </div>
         </div>
+      </div>
 
-        <div class="col">
-            <h4>Nosotros</h4>
-            <a href="Nosotros.html">Acerca de nosotros</a>
-            <a href="Tienda.html">Productos</a>
-            <a href="#">Politicas de privacidad</a>
-            <a href="#">Terminos y condiciones</a>
-            <a href="Contactenos.html">Contactanos</a>
-        </div>
+      <div class="col">
+        <h4>Nosotros</h4>
+        <a href="Nosotros.html">Acerca de nosotros</a>
+        <a href="Tienda.html">Productos</a>
+        <a href="#">Politicas de privacidad</a>
+        <a href="#">Terminos y condiciones</a>
+        <a href="Contactenos.html">Contactanos</a>
+      </div>
 
-        <div class="col">
-            <h4>Mi cuenta</h4>
-            <a href="Sesion.html">Iniciar sesion</a>
-            <a href="Cart.html">Carrito de compras</a>
-            <a href="jdgamboa93@soy.sena.edu.co">Ayuda</a>
-        </div>
+      <div class="col">
+        <h4>Mi cuenta</h4>
+        <a href="Sesion.html">Iniciar sesion</a>
+        <a href="Cart.html">Carrito de compras</a>
+        <a href="jdgamboa93@soy.sena.edu.co">Ayuda</a>
+      </div>
 
-        <div class="col payment">
-            <h4>Metodos de pago</h4>
-            <p>Pagos por bancas virtuales</p>
-            <div class="row">
-                <img src="../Img/Bancos/Nequi.png" alt="">
-                <img src="../Img/Bancos/Daviplata.png" alt="">
-            </div>
-            <p>Pagos seguros</p>
-            <img src="../Img/pay/pay.png" alt="">
+      <div class="col payment">
+        <h4>Metodos de pago</h4>
+        <p>Pagos por bancas virtuales</p>
+        <div class="row">
+          <img src="../Img/Bancos/Nequi.png" alt="" />
+          <img src="../Img/Bancos/Daviplata.png" alt="" />
         </div>
+        <p>Pagos seguros</p>
+        <img src="../Img/pay/pay.png" alt="" />
+      </div>
 
-        <div class="copyright">
-            <p>&copy; 2023 - Bellolino S.A.S todos los derechos reservados</p>
-        </div>
+      <div class="copyright">
+        <p>&copy; 2023 - Bellolino S.A.S todos los derechos reservados</p>
+      </div>
     </footer>
     <!--Custom JS script-->
     <script src="../script.js"></script>
     <script src="../JS/Products.js"></script>
-</body>
-
+  </body>
 </html>
