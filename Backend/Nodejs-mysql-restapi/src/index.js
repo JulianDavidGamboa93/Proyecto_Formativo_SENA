@@ -1,4 +1,5 @@
 import express, { application } from 'express'
+import cors from 'cors';
 import LoginRoutes from './routes/Login.routes.js'
 import indexRoutes from './routes/index.routes.js'
 import UsersRoutes from './routes/Users.routes.js'
@@ -7,9 +8,10 @@ import CartRoutes from './routes/Cart.routes.js'
 import InvoiceRoutes from './routes/Invoice.routes.js'
 import ReviewsRoutes from './routes/Reviews.routes.js'
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 app.use(indexRoutes)
 app.use('/api', LoginRoutes)

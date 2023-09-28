@@ -140,6 +140,7 @@ body {
     -moz-border-radius: .5em;
     -ms-border-radius: .5em;
     -o-border-radius: .5em;
+    cursor: pointer;
 }
 
 .form-line{
@@ -175,6 +176,9 @@ body {
     -o-transform: scale(1);
 }
 
+.form #send {
+    
+}
 
 
 @media (max-width: 425px) {

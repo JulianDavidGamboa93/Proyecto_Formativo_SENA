@@ -25,12 +25,17 @@
                 <span class="form-line"></span>
             </div>
             <div class="form-group">
+                <input type="email" id="email" class="form-input" placeholder="  ">
+                <label for="email" class="form-label">Email</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
                 <input type="text" id="names" class="form-input" placeholder="  ">
                 <label for="name" class="form-label">Nombres</label>
                 <span class="form-line"></span>
             </div>
             <div class="form-group">
-                <input type="text" id="lastname" class="form-input" placeholder="  ">
+                <input type="text" id="lastnames" class="form-input" placeholder="  ">
                 <label for="Lastname" class="form-label">Apellidos</label>
                 <span class="form-line"></span>
             </div>
@@ -41,26 +46,34 @@
             </div>
             <div class="form-group">
                 <label for="genero" >Género</label>
-                <select id="genero" name="genero"  class="form-input">
-                  <option value="masculino">Masculino</option>
-                  <option value="femenino">Femenino</option>
-                  <option value="no_definido">No Definido</option>
+                <select id="gender" name="genero"  class="form-input">
+                  <option value="MASCULINO">Masculino</option>
+                  <option value="FEMENINO">Femenino</option>
+                  <option value="ND">No definido</option>
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" id="Cellphone" class="form-input" placeholder="  ">
+                <input type="text" id="cellphone" class="form-input" placeholder="  ">
                 <label for="Chellphone" class="form-label">Celular</label>
                 <span class="form-line"></span>
             </div>
             <div class="form-group">
+                <label for="rol" >Rol</label>
+                <select id="rol" name="rol"  class="form-input">
+                  <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                  <option value="USUARIO">CLIENTE</option>
+                </select>
+              </div>
+            <div class="form-group">
                 <input type="checkbox" id="terms" class="form-checkbox">
-                <label for="terms" >Acepto los <a href="#">términos y condiciones</a></label>
+                <label for="terms" >Acepto los <a href="https://es.wikipedia.org/wiki/T%C3%A9rminos_y_condiciones_de_uso" target="_blank">términos y condiciones</a></label>
             </div>
               
-            <input type="submit" class="form-submit" value="Registrarse">
+            <input type="submit" id="send" class="form-submit" value="Registrarse">
         </div>
     </form>
 
     <script src="../script.js"></script>
+    <script src="../JS/LoginRegistro.js"></script>
 </body>
 </html>
