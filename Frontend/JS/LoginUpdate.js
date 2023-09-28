@@ -7,9 +7,9 @@ document.getElementById('send').addEventListener("click", loginUpdate);
 async function loginUpdate(event){
     event.preventDefault();
     try {
-        const url = "http://localhost:4000/api/login/";
+        const url = "http://localhost:3000/api/login/";
         const data = {
-            Username: Username.value,
+            Username: userName.value,
             Userpassword: userPassword.value
         }
         const requestOption = {
@@ -21,12 +21,13 @@ async function loginUpdate(event){
         }
         const UpdateLog = await fetch(url, requestOption);
         const responses = await UpdateLog.json();
+        console.log(data);
         if (responses.status === 200) {
             alert("Se ha recuperado su contraseña de manera exitosa");
             try {
-                const urlWhere = "http://localhost:4000/api/login/Where"
+                const urlWhere = "http://localhost:3000/api/login/";
                 const dataWhere = {
-                    Username: Username.value,
+                    Username: userName.value,
                     Userpassword: userPassword.value
                 }
                 const requestOptions = {
@@ -39,9 +40,9 @@ async function loginUpdate(event){
                 const whereLogin = await fetch(urlWhere, requestOptions)
                 const responsesWhere = await whereLogin.json();
                 if(responsesWhere?.data[0]?.Rol === "ADMIN") {
-                    windows.open("index.html", "_self")
+                    window.open("index.html", "_self")
                 }else if (responsesWhere?.data[0]?.Rol === "USER") {
-                    windows.open("index.html", "_self")
+                    window.open("index.html", "_self")
                 }
 
             } catch (error) {
@@ -51,6 +52,6 @@ async function loginUpdate(event){
 
 
     } catch (error) {
-        
+        console.log("ERROR", error);
     }
 }

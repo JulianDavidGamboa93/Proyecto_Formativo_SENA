@@ -24,6 +24,18 @@ export const getUsurio_id = async (req, res) => {
   }
 };
 
+export const findUsuarios = async (req, res) => {
+  try {
+    const queryString = `SELECT * FROM ${body} WHERE Username = ? AND Userpassword = ?`;
+    const [rows] = await pool.query(queryString, [data.UserName, data.userPassword]);
+
+    return rows;
+  } catch (error) {
+    throw error; // Puedes manejar el error de la forma que prefieras
+  }
+};
+
+
 export const createUsuarios = async (req, res) => {
   try {
     const {
