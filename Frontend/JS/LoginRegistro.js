@@ -15,7 +15,7 @@ document.getElementById("send").addEventListener("click", RegistroLogin);
 async function RegistroLogin(event) {
   event.preventDefault();
   try {
-    const url = "http://localhost:3000/api/login";
+    const url = "http://localhost:3000/api/login/Insert";
     const data = {
         Username: userName.value,
         Userpassword: userPassword.value,
