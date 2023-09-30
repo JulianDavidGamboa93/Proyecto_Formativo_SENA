@@ -311,7 +311,6 @@ body{
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
-  cursor: pointer;
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
   margin: 15px 0;
   transition: 0.2s ease;
@@ -444,7 +443,7 @@ body{
 }
 
 #sm-banner .banner-box2{
-  background-image: url(Img/Cafe/IMG_2003-scaled.jpg);
+  background-image: url(Img/Cafe/Cultivos\ cafe.jpg);
 }
 
 #sm-banner h4{
