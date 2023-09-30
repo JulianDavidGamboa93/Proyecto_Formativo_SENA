@@ -39,7 +39,7 @@ async function RegistroLogin(event) {
     console.log(data);
     if (Responses.status === 200) {
       form.reset();
-      alert(`El usuario${userName.value}, se ha registrado correctamente`);
+      alert(`El usuario${userName.value}, se ha registrado correctamente como ${Rol.value}`);
       window.open('index.html', '_self');
     }else {
       alert("Error al intentar registrarse");

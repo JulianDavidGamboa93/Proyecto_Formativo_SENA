@@ -8,7 +8,7 @@ document.getElementById("send").addEventListener("click", WhereLogin);
 async function WhereLogin(event) {
   event.preventDefault();
   try {
-    const url = "http://localhost:3000/api/login";
+    const url = "http://localhost:3000/api/login/Where";
     const data = {
         Username: userName.value,
         Userpassword: userPassword.value,

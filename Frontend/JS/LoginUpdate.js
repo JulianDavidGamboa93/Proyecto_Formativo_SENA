@@ -7,7 +7,7 @@ document.getElementById('send').addEventListener("click", loginUpdate);
 async function loginUpdate(event){
     event.preventDefault();
     try {
-        const url = "http://localhost:3000/api/login/";
+        const url = "http://localhost:3000/api/login/Update";
         const data = {
             Username: userName.value,
             Userpassword: userPassword.value
@@ -25,7 +25,7 @@ async function loginUpdate(event){
         if (responses.status === 200) {
             alert("Se ha recuperado su contraseña de manera exitosa");
             try {
-                const urlWhere = "http://localhost:3000/api/login/";
+                const urlWhere = "http://localhost:3000/api/login/Update";
                 const dataWhere = {
                     Username: userName.value,
                     Userpassword: userPassword.value
@@ -39,9 +39,9 @@ async function loginUpdate(event){
                 }
                 const whereLogin = await fetch(urlWhere, requestOptions)
                 const responsesWhere = await whereLogin.json();
-                if(responsesWhere?.data[0]?.Rol === "ADMIN") {
+                if(responsesWhere?.data[0]?.Rol === "ADMINISTRADOR") {
                     window.open("index.html", "_self")
-                }else if (responsesWhere?.data[0]?.Rol === "USER") {
+                }else if (responsesWhere?.data[0]?.Rol === "CLIENTE") {
                     window.open("index.html", "_self")
                 }
 
