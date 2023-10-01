@@ -25,14 +25,15 @@ async function WhereLogin(event) {
     const Responses = await response.json();
     console.log(Responses);
     if (Responses.data[0]?.Rol === "ADMINISTRADOR") {
-      form.reset();
+      loginForm.reset(); // Cambiado de form.reset() a loginForm.reset()
       window.open('../index.html', '_self');
     } else if (Responses.data[0]?.Rol === "CLIENTE") {
-        form.reset();
-        window.open('../index.html', '_self');
-    }else {
+      loginForm.reset(); // Cambiado de form.reset() a loginForm.reset()
+      window.open('../index.html', '_self');
+    } else {
       alert("Usuario no registrado.");
     }
+    
   } catch (error) {
    
   }
