@@ -21,11 +21,11 @@ async function loginUpdate(event){
         }
         const UpdateLog = await fetch(url, requestOption);
         const responses = await UpdateLog.json();
-        console.log(data);
+        console.log(data,responses);
         if (responses.status === 200) {
             alert("Se ha recuperado su contraseña de manera exitosa");
             try {
-                const urlWhere = "http://localhost:3000/api/login/Update";
+                const urlWhere = "http://localhost:3000/api/login/Where";
                 const dataWhere = {
                     Username: userName.value,
                     Userpassword: userPassword.value
@@ -39,19 +39,20 @@ async function loginUpdate(event){
                 }
                 const whereLogin = await fetch(urlWhere, requestOptions)
                 const responsesWhere = await whereLogin.json();
+                console.log(responsesWhere)
                 if(responsesWhere?.data[0]?.Rol === "ADMINISTRADOR") {
-                    window.open("index.html", "_self")
+                    window.open("../index.html", "_self")
                 }else if (responsesWhere?.data[0]?.Rol === "CLIENTE") {
-                    window.open("index.html", "_self")
+                    window.open("../index.html", "_self")
                 }
 
             } catch (error) {
-                console.log("ERROR", error);
+                
             }
         }
 
 
     } catch (error) {
-        console.log("ERROR", error);
+        
     }
 }

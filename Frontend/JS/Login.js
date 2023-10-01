@@ -1,7 +1,7 @@
-const loginForm = document.querySelector('#form')
+const loginForm = document.querySelector('.form');
 const userName = document.querySelector('#user');
 const userPassword = document.querySelector('#password');
-const Rol = document.querySelector('#rol');
+const userRol = document.querySelector('#rol');
 
 document.getElementById("send").addEventListener("click", WhereLogin);
 
@@ -12,6 +12,7 @@ async function WhereLogin(event) {
     const data = {
         Username: userName.value,
         Userpassword: userPassword.value,
+        Rol: userRol.value
     };
     const requestOptions = {
       method: "POST", 
@@ -22,17 +23,17 @@ async function WhereLogin(event) {
     };
     const response = await fetch(url, requestOptions);
     const Responses = await response.json();
-    console.log(data);
+    console.log(Responses);
     if (Responses.data[0]?.Rol === "ADMINISTRADOR") {
       form.reset();
-      window.open('index.html', '_self');
+      window.open('../index.html', '_self');
     } else if (Responses.data[0]?.Rol === "CLIENTE") {
         form.reset();
-        window.open('index.html', '_self');
+        window.open('../index.html', '_self');
     }else {
       alert("Usuario no registrado.");
     }
   } catch (error) {
-    console.error("Error:", error);
+   
   }
 }

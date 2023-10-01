@@ -1,4 +1,4 @@
-const RegisterForm = document.querySelector('#form')
+const RegisterForm = document.querySelector('.form')
 const userName = document.querySelector('#user');
 const userPassword = document.querySelector('#password');
 const userEmail = document.querySelector('#email');
@@ -38,13 +38,12 @@ async function RegistroLogin(event) {
     const Responses = await response.json();
     console.log(data);
     if (Responses.status === 200) {
-      form.reset();
-      alert(`El usuario${userName.value}, se ha registrado correctamente como ${Rol.value}`);
-      window.open('index.html', '_self');
+      alert(`El usuario${userName.value}, se ha registrado correctamente como ${rolUser.value}`);
+      window.open('../index.html', '_self');
     }else {
       alert("Error al intentar registrarse");
     }
+    form.reset();
   } catch (error) {
-    console.error("Error:", error);
   }
 }
