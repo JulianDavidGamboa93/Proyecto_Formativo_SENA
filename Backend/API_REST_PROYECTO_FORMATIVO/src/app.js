@@ -11,6 +11,11 @@ app.use(cors());
 
 //Rutas de Cabecera
 const login = require('./modules/login/rutas');
+const users = require('./modules/users/rutas');
+const products = require('./modules/products/rutas');
+const cart = require('./modules/Cartshop/rutas');
+const invoice = require('./modules/invoice/rutas');
+const reviews = require('./modules/ShopReviews/rutas');
 
 //Middleware
 app.use(morgan('dev'));
@@ -22,6 +27,11 @@ app.set('port', config.app.port);
 
 //Ruta
 app.use('/api/login', login);
+app.use('/api/users', users);
+app.use('/api/products', products);
+app.use('/api/cart', cart);
+app.use('/api/invoice', invoice);
+app.use('/api/reviews/', reviews);
 
 module.exports = app;
 
