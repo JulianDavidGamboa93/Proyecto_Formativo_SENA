@@ -26,7 +26,7 @@ async function WhereLogin(event) {
     console.log(Responses);
     if (Responses.data[0]?.Rol === "ADMINISTRADOR") {
       loginForm.reset(); // Cambiado de form.reset() a loginForm.reset()
-      window.open('../index.html', '_self');
+      window.open('indexAdmin.html', '_self');
     } else if (Responses.data[0]?.Rol === "CLIENTE") {
       loginForm.reset(); // Cambiado de form.reset() a loginForm.reset()
       window.open('../index.html', '_self');
