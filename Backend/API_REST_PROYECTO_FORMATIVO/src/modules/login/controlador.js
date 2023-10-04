@@ -18,9 +18,15 @@ function Update(body) {
     return db.Update(Tabla,body)
 };
 
+function Delete(body) {
+    return db.Delete(Tabla,body);
+
+}
+
 module.exports = {
     getUsuario,
     Where,
     Insert,
-    Update
+    Update,
+    Delete,
 }

@@ -32,36 +32,39 @@
 
     <div id="usuarios">
         <h2>Listado de Usuarios</h2>
-        <table>
-            <th>
-                <tr>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Fecha alta</th>
-                    <th>Rol</th>
-                    <th>Accion</th>
-                </tr>
-            </th>
-            <tbody>
-                <td>Julian009</td>
-                <td>Julian David</td>
-                <td>Gamboa Duran</td>
-                <td>03/10/2023</td>
-                <td>Adminsitrador</td>
-                <button>Actualizar</button>
-                <button>Eliminar</button>
-            </tbody>
-        </table>
+        <table id="table"></table>
+        <div id="popupForm">
+            <h2 class="TituloPopUp">Editar Registro</h2>
+            <form id="popupFormulario"></form>
+            <!-- Aquí puedes agregar tus campos de formulario -->
+            <label for="Id" class="LabelPopUp">ID:</label>
+            <input type="text" id="Id" name="Id" class="InputPopUp" disabled>
+            <label for="Usuario" class="LabelPopUp">Usuario:</label>
+            <input type="text" id="userName" name="userName" class="InputPopUp">
+            <label for="correo" class="LabelPopUp">Correo:</label>
+            <input type="text" id="userEmail" name="userEmail" class="InputPopUp">
+            <label for="Nombres" class="LabelPopUp">Nombres:</label>
+            <input type="text" id="UsersNames" name="UsersNames" class="InputPopUp">
+            <label for="Apellidos" class="LabelPopUp">Apellidos:</label>
+            <input type="text" id="userLastnames" name="userLastnames" class="InputPopUp">
+            <label for="Celular" class="LabelPopUp">Celular:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" class="InputPopUp">
+            <label for="Rol" class="LabelPopUp">Rol:</label>
+            <input type="text" id="userRol" name="userRol" class="InputPopUp">
+            <label for="CREATED" class="LabelPopUp">Creado:</label>
+            <input type="text" id="userCreated" name="userCreated" class="InputPopUp">
+            <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
+            
+            </form>
     </div>
 
     <section id="table-usuarios">
-        <div class="cotainer-table">
+        <!-- <div class="cotainer-table">
             <table class="$table"></table>
             <div id="popupForm">
                 <h2 class="TituloPopUp">Editar Registro</h2>
                 <form id="popupFormulario"></form>
-                <!-- Aquí puedes agregar tus campos de formulario -->
+                Aquí puedes agregar tus campos de formulario 
                 <label for="Id" class="LabelPopUp">ID:</label>
                 <input type="text" id="Id" name="Id" class="InputPopUp" disabled>
                 <label for="Usuario" class="LabelPopUp">Usuario:</label>
@@ -84,9 +87,8 @@
                 <input type="text" id="userRol" name="userRol" class="InputPopUp">
                 <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
                 </form>
-            </div>
+            </div>-->
         </div>
-        <script src="./JS/script.js"></script>
     </section>
 
     <script src="../script.js"></script>
