@@ -179,7 +179,7 @@ async function updateRegistro(event) {
             created: usercreatedUpdate.value,
         };
         const requestOptions = {
-            method: 'PATCH',
+            method: "PATCH",
             header: {
                 "Content-Type": "application/json",
             },
