@@ -42,4 +42,13 @@ router.delete('/Delete', async function (req, res) {
     }
 });
 
+router.delete('/Delete', async function (req,res) {
+    try {
+        const items = await controlador.Delete(req.body)
+        respuesta.success(req, res, items, 200);
+    } catch (error) {
+        respuesta.error(req, res, error, 500)
+    }
+});
+
 module.exports = router;

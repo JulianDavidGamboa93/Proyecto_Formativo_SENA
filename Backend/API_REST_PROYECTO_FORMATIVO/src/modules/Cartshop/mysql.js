@@ -63,14 +63,15 @@ function Update(tabla, id) {
     })
 };
 
-function Delete(tabla, id) {
-    return new Promise((resolve, reject) => {
-        conexion.query(`DELETE FROM ${tabla} WHERE ID_Cart = ?`, [id], (error, result) => {
-            if (error)
+function Delete(tabla, data) {
+    return new Promise((resolve,reject) => {
+        conexion.query(`DELETE FROM ${tabla} WHERE ID_Cart = ?`, data.ID_Cart,(error,result) => {
+            if(error) 
                 return reject(error);
-            resolve(result);
-        });
-    });
+                resolve(result);
+            
+        })
+    })    
 }
 
 
@@ -78,5 +79,5 @@ module.exports = {
     getCart,
     Insert,
     Update,
-    Delete
+    Delete,
 }

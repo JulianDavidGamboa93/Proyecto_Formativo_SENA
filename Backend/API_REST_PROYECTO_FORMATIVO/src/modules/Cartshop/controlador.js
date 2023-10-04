@@ -16,12 +16,13 @@ function Update(body) {
 };
 
 function Delete(body) {
-    return db.Delete(Tabla,body)
+    return db.Delete(Tabla,body);
+
 }
 
 module.exports = {
     getCart,
     Insert,
     Update,
-    Delete
+    Delete,
 }

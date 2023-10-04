@@ -64,20 +64,20 @@ function Update(tabla, data) {
 };
 
 function Delete(tabla, data) {
-    return new Promise((resolve, reject) =>{
-        conexion.query(`DELETE FROM ${tabla} WHERE ID_Products = ?`, [data,data.ID_Products], (error,result)=>{
-            if(error)
+    return new Promise((resolve,reject) => {
+        conexion.query(`DELETE FROM ${tabla} WHERE ID_Products = ?`, data.ID_Products,(error,result) => {
+            if(error) 
                 return reject(error);
                 resolve(result);
             
         })
-    })
-};
+    })    
+}
 
 
 module.exports = {
     getProducts,
     Insert,
     Update,
-    Delete
+    Delete,
 }

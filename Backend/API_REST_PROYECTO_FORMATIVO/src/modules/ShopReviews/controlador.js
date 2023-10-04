@@ -14,8 +14,14 @@ function Update(body) {
     return db.Update(Tabla,body)
 };
 
+function Delete(body) {
+    return db.Delete(Tabla,body);
+
+}
+
 module.exports = {
     getReviews,
     Insert,
-    Update
+    Update,
+    Delete,
 }

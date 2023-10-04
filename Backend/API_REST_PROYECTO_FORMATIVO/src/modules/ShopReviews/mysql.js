@@ -61,9 +61,20 @@ function Update(tabla, data) {
         })
     })
 };
+function Delete(tabla, data) {
+    return new Promise((resolve,reject) => {
+        conexion.query(`DELETE FROM ${tabla} WHERE ID_Reviews = ?`, data.ID_Reviews,(error,result) => {
+            if(error) 
+                return reject(error);
+                resolve(result);
+            
+        })
+    })    
+}
 
 module.exports = {
     getReviews,
     Insert,
     Update,
+    Delete,
 }
