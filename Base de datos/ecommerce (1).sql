@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-09-2023 a las 20:47:37
+-- Tiempo de generación: 04-10-2023 a las 04:39:56
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -31,10 +31,10 @@ CREATE TABLE `cart` (
   `ID_Cart` int(11) NOT NULL,
   `login_id` int(11) DEFAULT NULL,
   `products_id` int(11) DEFAULT NULL,
-  `quantity` int(11) NOT NULL,
-  `unitprice` int(11) NOT NULL,
-  `dateadded` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `cartstatus` enum('IN PROGRESS','COMPLETED') NOT NULL DEFAULT 'IN PROGRESS',
+  `Quantity` int(11) NOT NULL,
+  `Unitprice` int(11) NOT NULL,
+  `Dateadded` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Cartstatus` enum('IN PROGRESS','COMPLETED') NOT NULL DEFAULT 'IN PROGRESS',
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -49,10 +49,10 @@ CREATE TABLE `invoice` (
   `login_id` int(11) DEFAULT NULL,
   `users_id` int(11) DEFAULT NULL,
   `products_id` int(11) DEFAULT NULL,
-  `purchasedate` datetime NOT NULL,
-  `shipping` enum('WAITING FOR SHIPPING','BEIGN PREPARED','SHIPPED','DELIVERED') NOT NULL DEFAULT 'BEIGN PREPARED',
-  `refund` enum('YES','NO') NOT NULL DEFAULT 'NO',
-  `CRATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Purchasedate` datetime NOT NULL,
+  `Shipping` enum('WAITING FOR SHIPPING','BEING PREPARED','SHIPPED','DELIVERED') NOT NULL DEFAULT 'BEING PREPARED',
+  `Refund` enum('YES','NO') NOT NULL DEFAULT 'NO',
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -63,15 +63,16 @@ CREATE TABLE `invoice` (
 --
 
 CREATE TABLE `login` (
-  `id_Login` int(11) NOT NULL,
-  `username` varchar(40) NOT NULL,
-  `userpassword` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `name` varchar(40) NOT NULL,
-  `lastname` varchar(40) NOT NULL,
-  `birthdate` date NOT NULL,
-  `gender` enum('M','F','ND') NOT NULL,
-  `phonenumber` varchar(30) NOT NULL,
+  `ID_Login` int(11) NOT NULL,
+  `Username` varchar(70) NOT NULL,
+  `Userpassword` varchar(70) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Names` varchar(60) DEFAULT NULL,
+  `Lastnames` varchar(60) DEFAULT NULL,
+  `Birthdate` date NOT NULL,
+  `Gender` enum('M','F','ND') DEFAULT NULL,
+  `Phonenumber` varchar(50) DEFAULT NULL,
+  `Rol` enum('ADMIN','USER') NOT NULL,
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -84,14 +85,14 @@ CREATE TABLE `login` (
 
 CREATE TABLE `products` (
   `ID_Products` int(11) NOT NULL,
-  `productname` varchar(60) NOT NULL,
-  `price` int(11) NOT NULL,
-  `description` varchar(150) NOT NULL,
-  `beantype` enum('ARABICA','ROBUSTA','BLEND') NOT NULL,
-  `category` enum('ROASTED COFFEE','GROUND COFFEE','WHOLE BEAN COFFEE') NOT NULL DEFAULT 'ROASTED COFFEE',
-  `roasted` enum('LIGHT','MEDIUM','DARK') NOT NULL DEFAULT 'MEDIUM',
-  `processing` enum('SUNDRY','WASHED','HONEY') NOT NULL DEFAULT 'SUNDRY',
-  `stock` enum('IN STOCK','OUT OF STOCK','NOT AVALIABLE') NOT NULL DEFAULT 'IN STOCK',
+  `Productname` varchar(60) NOT NULL,
+  `Price` int(11) NOT NULL,
+  `Productdesc` varchar(150) NOT NULL,
+  `Beantype` enum('ARABICA','ROBUSTA','BLEND') NOT NULL,
+  `Category` enum('ROASTED COFFEE','GROUND COFFEE','WHOLE BEAN COFFEE') NOT NULL DEFAULT 'ROASTED COFFEE',
+  `Roasted` enum('LIGHT','MEDIUM','DARK') NOT NULL DEFAULT 'MEDIUM',
+  `Processing` enum('SUNDRY','WASHED','HONEY') NOT NULL DEFAULT 'SUNDRY',
+  `Stock` enum('IN STOCK','OUT OF STOCK','NOT AVAILABLE') NOT NULL DEFAULT 'IN STOCK',
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -108,7 +109,7 @@ CREATE TABLE `reviews` (
   `products_id` int(11) DEFAULT NULL,
   `Reviewdescription` varchar(300) DEFAULT NULL,
   `Stars` enum('1','2','3','4','5') NOT NULL DEFAULT '3',
-  `CRATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -121,9 +122,10 @@ CREATE TABLE `reviews` (
 CREATE TABLE `users` (
   `ID_Users` int(11) NOT NULL,
   `login_id` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT 1,
-  `adress` varchar(60) DEFAULT NULL,
-  `socialmedias` enum('FACEBOOK','INSTAGRAM','TWITTER') DEFAULT NULL,
+  `Adress` varchar(60) DEFAULT NULL,
+  `Active` tinyint(1) DEFAULT 1,
+  `Socialmedias` enum('FACEBOOK','TWITTER','INSTAGRAM') DEFAULT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -135,26 +137,21 @@ CREATE TABLE `users` (
 -- Indices de la tabla `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`ID_Cart`),
-  ADD KEY `login_id` (`login_id`),
-  ADD KEY `products_id` (`products_id`);
+  ADD PRIMARY KEY (`ID_Cart`);
 
 --
 -- Indices de la tabla `invoice`
 --
 ALTER TABLE `invoice`
-  ADD PRIMARY KEY (`ID_Invoice`),
-  ADD KEY `login_id` (`login_id`),
-  ADD KEY `users_id` (`users_id`),
-  ADD KEY `products_id` (`products_id`);
+  ADD PRIMARY KEY (`ID_Invoice`);
 
 --
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id_Login`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`ID_Login`),
+  ADD UNIQUE KEY `Username` (`Username`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- Indices de la tabla `products`
@@ -166,9 +163,7 @@ ALTER TABLE `products`
 -- Indices de la tabla `reviews`
 --
 ALTER TABLE `reviews`
-  ADD PRIMARY KEY (`ID_Reviews`),
-  ADD KEY `login_id` (`login_id`),
-  ADD KEY `products_id` (`products_id`);
+  ADD PRIMARY KEY (`ID_Reviews`);
 
 --
 -- Indices de la tabla `users`
@@ -197,7 +192,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_Login` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Login` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
@@ -222,32 +217,10 @@ ALTER TABLE `users`
 --
 
 --
--- Filtros para la tabla `cart`
---
-ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id_Login`),
-  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`products_id`) REFERENCES `products` (`ID_Products`);
-
---
--- Filtros para la tabla `invoice`
---
-ALTER TABLE `invoice`
-  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id_Login`),
-  ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`users_id`) REFERENCES `users` (`ID_Users`),
-  ADD CONSTRAINT `invoice_ibfk_3` FOREIGN KEY (`products_id`) REFERENCES `products` (`ID_Products`);
-
---
--- Filtros para la tabla `reviews`
---
-ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id_Login`),
-  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`products_id`) REFERENCES `products` (`ID_Products`);
-
---
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id_Login`);
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`ID_Login`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
