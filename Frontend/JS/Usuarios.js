@@ -104,7 +104,7 @@ function showFetch(data) {
             const input8 = document.getElementById("userCreated");
 
             input1.value = element.ID_Login;
-            input2.value = element.Userame;
+            input2.value = element.Username;
             input3.value = element.Email;
             input4.value = element.Names;
             input5.value = element.Lastnames;
@@ -165,7 +165,7 @@ const usercreatedUpdate = document.getElementById("userCreated");
 document.getElementById("enviarPopUp").addEventListener('click', updateRegistro);
 
 async function updateRegistro(event) {
-    eventDefault();
+    event.preventDefault();
     try {
         const urlUpdate = "http://localhost:3000/api/login/Update";
         const data = {
@@ -185,7 +185,7 @@ async function updateRegistro(event) {
             },
             body: JSON.stringify(data),
         };
-        const updateFetch = await fetch(url, requestOptions);
+        const updateFetch = await fetch(urlUpdate, requestOptions);
         const Responses = await updateFetch.json();
         if (Responses.status === 200) {
             alert("Registro editado correctamente")

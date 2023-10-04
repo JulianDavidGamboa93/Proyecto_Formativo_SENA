@@ -18,6 +18,10 @@ function Update(body) {
     return db.Update(Tabla,body)
 };
 
+function UpdateId(body) {
+    return db.UpdateId(Tabla,body)
+}
+
 function Delete(body) {
     return db.Delete(Tabla,body);
 
@@ -28,5 +32,7 @@ module.exports = {
     Where,
     Insert,
     Update,
+    UpdateId,
     Delete,
+
 }

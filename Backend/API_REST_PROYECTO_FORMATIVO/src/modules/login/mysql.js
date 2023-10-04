@@ -73,6 +73,20 @@ function Update(tabla, data) {
         })
     })
 };
+
+function UpdateId(tabla, data) {
+    return new Promise((resolve, reject) =>{
+        conexion.query(`UPDATE ${tabla} SET ? WHERE ID_Login = ?`, [data,data.ID_Login], (error,result)=>{
+            if(error)
+                return reject(error);
+                resolve(result);
+            
+        })
+    })
+};
+
+
+
 function Delete(tabla, data) {
     return new Promise((resolve,reject) => {
         conexion.query(`DELETE FROM ${tabla} WHERE ID_Login = ?`, data.ID_Login,(error,result) => {
@@ -90,5 +104,6 @@ module.exports = {
     Where,
     Insert,
     Update,
+    UpdateId,
     Delete,
 }
