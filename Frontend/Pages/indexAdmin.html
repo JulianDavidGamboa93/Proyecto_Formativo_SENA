@@ -37,10 +37,10 @@
             <h2 class="TituloPopUp">Editar Registro</h2>
             <form id="popupFormulario"></form>
             <!-- Aquí puedes agregar tus campos de formulario -->
-            <label for="Id" class="LabelPopUp">ID:</label>
-            <input type="text" id="Id" name="Id" class="InputPopUp" disabled>
             <label for="Usuario" class="LabelPopUp">Usuario:</label>
             <input type="text" id="userName" name="userName" class="InputPopUp" disabled>
+            <label for="Contraseña" class="LabelPopUp">Contraseña:</label>
+            <input type="text" id="userPassword" name="userPassword" class="InputPopUp">
             <label for="correo" class="LabelPopUp">Correo:</label>
             <input type="text" id="userEmail" name="userEmail" class="InputPopUp">
             <label for="Nombres" class="LabelPopUp">Nombres:</label>
@@ -50,9 +50,10 @@
             <label for="Celular" class="LabelPopUp">Celular:</label>
             <input type="text" id="phoneNumber" name="phoneNumber" class="InputPopUp">
             <label for="Rol" class="LabelPopUp">Rol:</label>
-            <input type="text" id="userRol" name="userRol" class="InputPopUp">
-            <label for="CREATED" class="LabelPopUp">Creado:</label>
-            <input type="text" id="userCreated" name="userCreated" class="InputPopUp" disabled>
+            <select id="userRol" name="userRol" class="InputPopUp">
+                <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                <option value="CLIENTE">CLIENTE</option>
+              </select>
             <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
             
             </form>

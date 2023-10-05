@@ -23,6 +23,10 @@ function showFetch(data) {
     userHeader.textContent = "Usuario";
     headerRow.appendChild(userHeader);
 
+    const userpasswordHeader = document.createElement("th");
+    userpasswordUpdate.textContent = "Contraseña";
+    headerRow.appendChild(userpasswordHeader);
+
     const emailHeader = document.createElement("th");
     emailHeader.textContent = "Email";
     headerRow.appendChild(emailHeader);
@@ -39,15 +43,14 @@ function showFetch(data) {
     phoneHeader.textContent = "Celular";
     headerRow.appendChild(phoneHeader);
 
-
     const rolHeader = document.createElement("th");
     rolHeader.textContent = "Rol";
     headerRow.appendChild(rolHeader);
 
 
-    const dateHeader = document.createElement("th");
-    dateHeader.textContent = "Fecha de creacion";
-    headerRow.appendChild(dateHeader);
+    //const dateHeader = document.createElement("th");
+    //dateHeader.textContent = "Fecha de creacion";
+    //headerRow.appendChild(dateHeader);
 
     
     table.appendChild(headerRow);
@@ -61,6 +64,10 @@ function showFetch(data) {
         userName.textContent = element.Username;
         Row.appendChild(userName);
 
+        const userPassword = document.createElement("td");
+        userPassword.textContent = element.Userpassword;
+        Row.appendChild(userPassword);
+        
         const emailUser = document.createElement("td");
         emailUser.textContent = element.Email;
         Row.appendChild(emailUser);
@@ -81,8 +88,8 @@ function showFetch(data) {
         rolUsers.textContent = element.Rol;
         Row.appendChild(rolUsers);
 
-        const usersDates = document.createElement("td");
-        usersDates.textContent = element.CREATED_AT;
+        //const usersDates = document.createElement("td");
+        //usersDates.textContent = element.CREATED_AT;
 
         const btnUpdate = document.createElement("button");
         btnUpdate.textContent = "Actualizar";
@@ -94,23 +101,25 @@ function showFetch(data) {
         function Actualizar(event) {
             event.preventDefault();
             var popup = document.getElementById("popupForm");
-            const input1 = document.getElementById("Id");
-            const input2 = document.getElementById("userName");
+            //const input1 = document.getElementById("Id");
+            const input1 = document.getElementById("userName");
+            const input2 = document.getElementById("userPassword");
             const input3 = document.getElementById("userEmail");
             const input4 = document.getElementById("UsersNames");
             const input5 = document.getElementById("userLastnames");
             const input6 = document.getElementById("phoneNumber");
             const input7 = document.getElementById("userRol");
-            const input8 = document.getElementById("userCreated");
+            //const input8 = document.getElementById("userCreated");
 
-            input1.value = element.ID_Login;
-            input2.value = element.Username;
+            //input1.value = element.ID_Login;
+            input1.value = element.Username;
+            input2.value = element.Userpassword;
             input3.value = element.Email;
             input4.value = element.Names;
             input5.value = element.Lastnames;
             input6.value = element.Phonenumber;
             input7.value = element.Rol,
-            input8.value = element.CREATED_AT;
+            //input8.value = element.CREATED_AT;
             popup.style.display = 'block';
         }
 
@@ -153,47 +162,48 @@ function showFetch(data) {
     document.body.table?.appendChild(table);
 }
 
-const idUpdate = document.getElementById("Id");
 const usernameUpdate = document.getElementById("userName");
+const userpasswordUpdate = document.getElementById("userPassword");
 const emailUpdate = document.getElementById("userEmail");
 const namesUpdate = document.getElementById("UsersNames");
 const lastnamesUpdate = document.getElementById("userLastnames");
 const phomenumberUpdate = document.getElementById("phoneNumber");
 const userrolUpdate = document.getElementById("userRol");
-const usercreatedUpdate = document.getElementById("userCreated");
 
 document.getElementById("enviarPopUp").addEventListener('click', updateRegistro);
 
 async function updateRegistro(event) {
     event.preventDefault();
-    try {
+    
         const urlUpdate = "http://localhost:3000/api/login/Update";
-        const data = {
-            IdUser: idUpdate.value,
-            usernames: usernameUpdate.value,
-            useremail: emailUpdate.value,
-            names: namesUpdate.value,
-            lastnames: lastnamesUpdate.value,
-            cellphone: phomenumberUpdate.value,
-            roluser: userrolUpdate.value,
-            created: usercreatedUpdate.value,
+        const dataUpdate = {
+            Username: usernameUpdate.value,
+            Userpassword: userpasswordUpdate.value,
+            Email: emailUpdate.value,
+            Names: namesUpdate.value,
+            Lastnames: lastnamesUpdate.value,
+            Phonenumber: phomenumberUpdate.value,
+            Rol: userrolUpdate.value,
         };
+        console.log(dataUpdate)
         const requestOptions = {
             method: "PATCH",
-            header: {
+            headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(dataUpdate),
         };
+        console.log(urlUpdate, requestOptions);
         const updateFetch = await fetch(urlUpdate, requestOptions);
         const Responses = await updateFetch.json();
+        console.log(Responses)
         if (Responses.status === 200) {
             alert("Registro editado correctamente")
             getFetch();
         }else {
             alert ("Error de api o al actualizar el registro");
         }
-    } catch (error) {
-        
+        try {} catch (error) {
+        console.log("Error: ", error);
     }
 }
