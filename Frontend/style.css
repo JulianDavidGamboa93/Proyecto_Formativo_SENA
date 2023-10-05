@@ -172,6 +172,32 @@ body{
   left: 20px;
 }
 
+.drop-users {
+  position: absolute;
+  display: none;
+ 
+}
+
+
+
+.drop-users li {
+  border-bottom: solid 1px #fff;
+  text-align: center;
+  background-color: #E3E6F3;
+  padding: 20px;
+  width: 190px;
+  transform: translateX(-46px);
+  -webkit-transform: translateX(-46px);
+  -moz-transform: translateX(-46px);
+  -ms-transform: translateX(-46px);
+  -o-transform: translateX(-46px);
+  padding: 20px;
+}
+
+#users-dropdown:hover .drop-users {
+  display: block;
+}
+
 #mobile{
   display: none;
   align-items: center;

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../style.css">
+    <!--Fabicon-->
+    <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
+    <!--FontAwsome-->
+    <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="indexAdmin.html" class="header-logo">Bellolino</a>
+        <div>
+            <ul id="navbar">
+                <li><a href="indexUsers.html">Inicio</a></li>
+                <li><a href="Products.html">Tienda</a></li>
+                <li><a href="Us-user.html">Nosotros</a></li>
+                <li><a href="ContactUs-user.html">Contactenos</a></li>
+                <li id="users-dropdown"><a href="CuentaUsuario.html"><i class="fa-regular fa-user"></i> Cuenta</a></li>
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Cerar Sesion</a></li>
+                <li id="lg-cart"><a class="active" href="UserCart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="Pages/Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>Visitanos!</h2>
+        <p>Dejanos un mensaje, nos encataria escucharte!</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>Cantidad</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+                    <!--<td><img src="../Img/MarcasBlancas/Single product/2.jpg" alt=""></td>-->
+                    <td>Cafe marca blanca Colombia 100% Organico</td>
+                    <td>$6.000</td>
+                    <td><input type="number" value="1"></td>
+                    <td>6.000</td>
+                </tr>
+                <tr>
+                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+                    <!--<td><img src="../Img/MarcasBlancas/Single product/2.jpg" alt=""></td>-->
+                    <td>Cafe marca blanca Colombia 100% Organico</td>
+                    <td>$6.000</td>
+                    <td><input type="number" value="1"></td>
+                    <td>6.000</td>
+                </tr>
+                <tr>
+                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+                    <!--<td><img src="../Img/MarcasBlancas/Single product/2.jpg" alt=""></td>-->
+                    <td>Cafe marca blanca Colombia 100% Organico</td>
+                    <td>$6.000</td>
+                    <td><input type="number" value="1"></td>
+                    <td>6.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="cupon">
+            <h3>Cupones de descuentos</h3>
+            <div>
+                <input type="text" placeholder="Ingresar cupon">
+                <button class="normal">Usar</button>
+            </div>
+        </div>
+
+        <div id="Subtotal">
+            <h3>Total del carrito</h3>
+            <table>
+                <tr>
+                    <td>Sub Total</td>
+                    <td>$ 18.000 COP</td>
+                </tr>
+                <tr>
+                    <td>Envio</td>
+                    <td>Acordar con el vendedor</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>$ 18.000 COP</strong></td>
+                </tr>
+            </table>
+            <button class="normal">Proceder al pago</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <p class="logo-footer">Bellolino</p>
+            <h4>Contacto</h4>
+            <p> <strong>Direccion:</strong> Cra. 45 Sur #1255 · 82709600</p>
+            <p> <strong>Celulares:</strong>(571) 3430111 - Línea gratuita 18000 910270</p>
+            <p> <strong>Horarios:</strong> 8:00 AM - 5:30 PM Lunes a Viernes.</p>
+            <div class="follow">
+                <h4>Siguenos!</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/SENATolima/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SENA_Tolima" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/senacompetenciaslaborales/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:jdgamboa93@soy.sena.edu.co"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Nosotros</h4>
+            <a href="Us-user.html">Acerca de nosotros</a>
+            <a href="Products.html">Productos</a>
+            <a href="https://es.wikipedia.org/wiki/Pol%C3%ADtica_de_privacidad#:~:text=Una%20pol%C3%ADtica%20de%20privacidad%20es,datos%20del%20usuario%20y%20cliente." target="_blank">Politicas de privacidad</a>
+            <a href="https://es.wikipedia.org/wiki/T%C3%A9rminos_y_condiciones_de_uso" target="_blank">Terminos y condiciones</a>
+            <a href="ContactUs-user.html">Contactanos</a>
+        </div>
+
+        <div class="col">
+            <h4>Mi cuenta</h4>
+            <a href="Sesion.html">Iniciar sesion</a>
+            <a href="Cart.html">Carrito de compras</a>
+            <a href="mailto:jdgamboa93@soy.sena.edu.co">Ayuda</a>
+        </div>
+
+        <div class="col payment">
+            <h4>Metodos de pago</h4>
+            <p>Pagos por bancas virtuales</p>
+            <div class="row">
+                <img src="../Img/Bancos/Nequi.png" alt="">
+                <img src="../Img/Bancos/Daviplata.png" alt="">
+            </div>
+            <p>Pagos seguros</p>
+            <img src="../Img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2023 - Bellolino S.A.S todos los derechos reservados</p>
+        </div>
+    </footer>
+    <!--Custom JS script-->
+    <script src="../script.js"></script>
+</body>
+
+</html>

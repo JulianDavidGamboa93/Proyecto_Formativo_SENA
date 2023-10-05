@@ -23,6 +23,14 @@ router.post('/Where', async function (req, res){
         respuesta.error(req, res, error, 500);
     }
 });
+router.post('/Where/User', async function (req, res){
+    try {
+        const items = await controlador.WhereUser(req.body);
+        respuesta.success(req, res, items,200);
+    } catch (error) {
+        respuesta.error(req, res, error, 500);
+    }
+});
 router.post('/Insert', async function (req, res){
     try {
         const items = await controlador.Insert(req.body);

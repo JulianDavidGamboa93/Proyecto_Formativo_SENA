@@ -53,6 +53,17 @@ function Where(tabla, data) {
         })
     })
 };
+
+function WhereUser(tabla, data) {
+    return new Promise((resolve, reject) =>{
+        conexion.query(`SELECT * FROM ${tabla} WHERE Username = ?, Userpassword = ?, Email = ?, Names = ?, Lastnames = ?, Phonenumber = ?`, [data.Username,data.Userpassword,data.Email,data.Names,data.Lastnames,data.Phonenumber], (error,result)=>{
+            if(error)
+                return reject(error);
+                resolve(result);
+            
+        })
+    })
+};
 function Insert(tabla, data) {
     return new Promise((resolve, reject) =>{
         conexion.query(`INSERT INTO ${tabla} SET ?`, data, (error,result)=>{
@@ -102,6 +113,7 @@ function Delete(tabla, data) {
 module.exports = {
     getUsuario,
     Where,
+    WhereUser,
     Insert,
     Update,
     UpdateId,

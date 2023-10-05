@@ -37,12 +37,17 @@ async function RegistroLogin(event) {
     const response = await fetch(url, requestOptions);
     const Responses = await response.json();
     console.log(data);
-    if (Responses.status === 200) {
-      alert(`El usuario${userName.value}, se ha registrado correctamente como ${rolUser.value}`);
-      window.open('../index.html', '_self');
+    if (Responses.status === 200 && rolUser.value == "CLIENTE") {
+      alert(`El usuario ${userName.value}, se ha registrado correctamente como ${rolUser.value}`);
+      window.open('indexUsers.html', '_self');
+    }else if (Responses.status === 200 && rolUser.value == "ADMINISTRADOR") {
+      alert(`El usuario ${userName.value}, se ha registrado correctamente como ${rolUser.value}`);
+      window.open('indexAdmin.html', '_self');
     }else {
       alert("Error al intentar registrarse");
     }
+    
+    
     form.reset();
   } catch (error) {
   }

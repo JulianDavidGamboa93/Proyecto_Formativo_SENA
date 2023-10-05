@@ -10,6 +10,10 @@ function Where(body) {
     return db.Where(Tabla,body)
 };
 
+function WhereUser(body) {
+    return db.WhereUser(Tabla, body)
+}
+
 function Insert(body) {
     return db.Insert(Tabla,body)
 };
@@ -30,6 +34,7 @@ function Delete(body) {
 module.exports = {
     getUsuario,
     Where,
+    WhereUser,
     Insert,
     Update,
     UpdateId,
