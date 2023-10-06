@@ -24,7 +24,7 @@ function showFetch(data) {
     headerRow.appendChild(userHeader);
 
     const userpasswordHeader = document.createElement("th");
-    userpasswordUpdate.textContent = "Contraseña";
+    userpasswordHeader.textContent = "Contraseña";
     headerRow.appendChild(userpasswordHeader);
 
     const emailHeader = document.createElement("th");
@@ -46,11 +46,6 @@ function showFetch(data) {
     const rolHeader = document.createElement("th");
     rolHeader.textContent = "Rol";
     headerRow.appendChild(rolHeader);
-
-
-    //const dateHeader = document.createElement("th");
-    //dateHeader.textContent = "Fecha de creacion";
-    //headerRow.appendChild(dateHeader);
 
     
     table.appendChild(headerRow);
@@ -101,7 +96,7 @@ function showFetch(data) {
         function Actualizar(event) {
             event.preventDefault();
             var popup = document.getElementById("popupForm");
-            //const input1 = document.getElementById("Id");
+        
             const input1 = document.getElementById("userName");
             const input2 = document.getElementById("userPassword");
             const input3 = document.getElementById("userEmail");
@@ -109,9 +104,7 @@ function showFetch(data) {
             const input5 = document.getElementById("userLastnames");
             const input6 = document.getElementById("phoneNumber");
             const input7 = document.getElementById("userRol");
-            //const input8 = document.getElementById("userCreated");
-
-            //input1.value = element.ID_Login;
+    
             input1.value = element.Username;
             input2.value = element.Userpassword;
             input3.value = element.Email;

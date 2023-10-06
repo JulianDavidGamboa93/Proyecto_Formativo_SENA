@@ -23,9 +23,10 @@ function showFetch(data) {
     userHeader.textContent = "Usuario";
     headerRow.appendChild(userHeader);
 
-    //const addressHeader = document.createElement("th");
-    //addressHeader = "Direccion";
-    //headerRow.appendChild(addressHeader);
+    const adressHeader = document.createElement("th");
+    adressHeader.textContent = "Direccion";
+    headerRow.appendChild(adressHeader)
+    
 
     const statusHeader = document.createElement("th");
     statusHeader.textContent = "Estado";
@@ -48,7 +49,7 @@ function showFetch(data) {
         Row.appendChild(fullName);
 
         const AddressUser = document.createElement("td");
-        AddressUser.textContent = element.userAddres;
+        AddressUser.textContent = element.userAddress;
         Row.appendChild(AddressUser);
         
         const statusUser = document.createElement("td");
@@ -71,15 +72,13 @@ function showFetch(data) {
         function Actualizar(event) {
             event.preventDefault();
             var popup = document.getElementById("popupForm");
-            //const input1 = document.getElementById("Id");
             const input1 = document.getElementById("Fullname");
-            const input2 = document.getElementById("userAddress");
+            const input2 = document.getElementById("Address");
             const input3 = document.getElementById("userStatus");
             const input4 = document.getElementById("userRefund");
 
-            //input1.value = element.ID_Login;
             input1.value = element.Fullname;
-            input2.value = element.Userpassword;
+            input2.value = element.userAddress;
             input3.value = element.Shipping;
             input4.value = element.Refund;
             popup.style.display = 'block';
@@ -125,8 +124,8 @@ function showFetch(data) {
 }
 
 const fullnameUpdate = document.getElementById("Fullname");
-const addressUpdate = document.getElementById("userAddress");
-const statusUpdate = document.getElementById("Estado");
+const addressUpdate = document.getElementById("Address");
+const statusUpdate = document.getElementById("userStatus");
 const refundUpdate = document.getElementById("userRefund");
 
 document.getElementById("enviarPopUp").addEventListener('click', updateRegistro);

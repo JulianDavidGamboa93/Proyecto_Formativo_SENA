@@ -51,9 +51,10 @@ function Insert(tabla, data) {
         })
     })
 };
+
 function Update(tabla, data) {
     return new Promise((resolve, reject) =>{
-        conexion.query(`UPDATE ${tabla} SET ? Fullname = ?`, [data,data.Fullname], (error,result)=>{
+        conexion.query(`UPDATE ${tabla} SET ? WHERE Fullname = ?`, [data,data.Fullname], (error,result)=>{
             if(error)
                 return reject(error);
                 resolve(result);
