@@ -29,7 +29,7 @@ async function WhereLogin(event) {
       window.open('indexAdmin.html', '_self');
     } else if (Responses.data[0]?.Rol === "CLIENTE") {
       loginForm.reset(); // Cambiado de form.reset() a loginForm.reset()
-      window.open('../index.html', '_self');
+      window.open('indexUsers.html', '_self');
     } else {
       alert("Usuario no registrado.");
     }

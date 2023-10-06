@@ -53,7 +53,7 @@ function Insert(tabla, data) {
 };
 function Update(tabla, data) {
     return new Promise((resolve, reject) =>{
-        conexion.query(`UPDATE ${tabla} SET ? WHERE ID_Invoice = ?`, [data,data.ID_Invoice], (error,result)=>{
+        conexion.query(`UPDATE ${tabla} SET ? Fullname = ?`, [data,data.Fullname], (error,result)=>{
             if(error)
                 return reject(error);
                 resolve(result);
@@ -62,8 +62,20 @@ function Update(tabla, data) {
     })
 };
 
+function Delete(tabla, data) {
+    return new Promise((resolve,reject) => {
+        conexion.query(`DELETE FROM ${tabla} WHERE ID_Invoice = ?`, data.ID_Invoice,(error,result) => {
+            if(error) 
+                return reject(error);
+                resolve(result);
+            
+        })
+    })    
+}
+
 module.exports = {
     getInvoice,
     Insert,
     Update,
+    Delete,
 }

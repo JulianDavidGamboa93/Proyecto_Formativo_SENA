@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../style.css">
+    <!--Fabicon-->
+    <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
+    <!--FontAwsome-->
+    <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="indexAdmin.html" class="header-logo">Bellolino</a>
+        <div>
+            <ul id="navbar">
+                <li><a href="Facturas.html">Facturas</a></li>
+                <li><a class="active" href="productList.html">Productos</a></li>
+                <li><a href="Usuarios.html"><i class="fa-regular fa-user"></i> Usuarios</a></li>
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Cerar Sesion</a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+    <div id="productos">
+        <h2>Lista de productos</h2>
+        <table id="table"></table>
+        <div id="popupForm">
+            <h2 class="TituloPopUp">Editar Registro</h2>
+            <form id="popupFormulario"></form>
+            <!-- Aquí puedes agregar tus campos de formulario -->
+            <label for="Product" class="LabelPopUp">Nombre:</label>
+            <input type="text" id="nameProduct" name="nameproduct" class="InputPopUp">
+            <label for="precio" class="LabelPopUp">Precio:</label>
+            <input type="Grano" id="priceProduct" name="Grano" class="InputPopUp">
+            <label for="Granos" class="LabelPopUp">Grano:</label>
+            <input type="text" id="beansProduct" name="Granos" class="InputPopUp">
+            <label for="stock" class="LabelPopUp">Stock:</label>
+            <select id="stockProduct" name="stockProduct" class="InputPopUp">
+                <option value="IN STOCK">En stock</option>
+                <option value="OUT OF STOCK">Sin stock</option>
+                <option value="NOT AVAILABLE">No disonible</option>
+            </select>
+            <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
+            
+            </form>
+    </div>
+
+  <script src="../JS/ProductList.js"></script>
+</body>
+
+</html>

@@ -61,14 +61,15 @@ CREATE TABLE invoice (
     login_id INT,
     users_id INT,
     products_id INT,
-    Fullname VARCHAR(40), NOT NULL,
-    userAdress = varchar(100), NOT NULL,
-    Purchasedate DATETIME NOT NULL,
+    Fullname VARCHAR(40) NOT NULL,
+    userAddress VARCHAR(100) NOT NULL, -- Cambié "userAdress" a "userAddress" y usé VARCHAR en lugar de "="
+    PurchaseDate DATETIME NOT NULL, -- Cambié "Purchasedate" a "PurchaseDate"
     Shipping ENUM('WAITING FOR SHIPPING', 'BEING PREPARED', 'SHIPPED', 'DELIVERED') NOT NULL DEFAULT 'BEING PREPARED',
     Refund ENUM('YES', 'NO') NOT NULL DEFAULT 'NO',
     CREATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
 
 
 
