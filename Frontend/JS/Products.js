@@ -59,41 +59,48 @@ try {
                 proContainer.appendChild(producto);
 
                 prodCart.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let tdGen = document.querySelectorAll('.objt-tb');
+                
                     const productId = e.currentTarget.getAttribute('data-product-id');
-                    const tr = document.createElement('tr');
-                    const tdNames = document.createElement('td')
-                    const tdPrices = document.createElement('td');
-                    const tdQuantity = document.createElement('td');
-                    const tdGrams = document.createElement('td');
-                    const tdBeans = document.createElement('td');
-
-                    tdNames.setAttribute('class', 'objt-tb')
-                    tdPrices.setAttribute('class', 'objt-tb')
-
-
-                    tdNames.innerHTML = datos[productId].nombre
-                    tdPrices.innerHTML = datos[productId].precio
-                    tdQuantity.innerHTML = datos[productId].cantidad
-                    tdGrams.innerHTML = datos[productId].gramos
-                    tdBeans.innerHTML = datos[productId].grano
-                    
-
-                    tr.appendChild(tdNames)
-                    tr.appendChild(tdPrices)
-                    tr.appendChild(tdQuantity)
-                    tr.appendChild(tdGrams)
-                    tr.appendChild(tdBeans)
-                    tableCart.appendChild(tr);
-                    
-                    // Obtiene el valor del atributo personalizado 'data-product-id' para saber en cuál producto se hizo clic
-                    
-                    alert('Hola haz tocado el elemento ' + productId);
+                    const productName = datos[productId].nombre;
+                
+                    // Verifica si ya existe un producto con el mismo nombre en la tabla
+                    let productoRepetido = false;
+                    tdGen.forEach((element) => {
+                        if (element.innerHTML === productName) {
+                            alert('El producto ya ha sido agregado al carrito');
+                            productoRepetido = true;
+                        }
+                    });
+                
+                    if (!productoRepetido) {
+                        const tr = document.createElement('tr');
+                        const tdNames = document.createElement('td');
+                        const tdPrices = document.createElement('td');
+                        const tdQuantity = document.createElement('td');
+                        const tdGrams = document.createElement('td');
+                        const tdBeans = document.createElement('td');
+                
+                        tdNames.setAttribute('class', 'objt-tb');
+                        tdPrices.setAttribute('class', 'objt-tb');
+                
+                        tdNames.innerHTML = datos[productId].nombre;
+                        tdPrices.innerHTML = datos[productId].precio;
+                        tdQuantity.innerHTML = datos[productId].cantidad;
+                        tdGrams.innerHTML = datos[productId].gramos;
+                        tdBeans.innerHTML = datos[productId].grano;
+                
+                        tr.appendChild(tdNames);
+                        tr.appendChild(tdPrices);
+                        tr.appendChild(tdQuantity);
+                        tr.appendChild(tdGrams);
+                        tr.appendChild(tdBeans);
+                        tableCart.appendChild(tr);
+                    }
                 });
-
                 contador++;
             }
-
-
         });
 } catch (error) {
     console.log(error);
