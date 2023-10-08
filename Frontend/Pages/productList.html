@@ -7,6 +7,7 @@
     <title>Administrador</title>
     <!--Custom CSS-->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../CSS/usersConfig.css">
     <!--Fabicon-->
     <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
     <!--FontAwsome-->
@@ -30,27 +31,29 @@
         </div>
     </section>
 
-    <div id="productos">
+    <div class="users-config">
         <h2>Lista de productos</h2>
         <table id="table"></table>
         <div id="popupForm">
             <h2 class="TituloPopUp">Editar Registro</h2>
-            <form id="popupFormulario"></form>
-            <!-- Aquí puedes agregar tus campos de formulario -->
-            <label for="Product" class="LabelPopUp">Nombre:</label>
-            <input type="text" id="nameProduct" name="nameproduct" class="InputPopUp">
-            <label for="precio" class="LabelPopUp">Precio:</label>
-            <input type="Grano" id="priceProduct" name="Grano" class="InputPopUp">
-            <label for="Granos" class="LabelPopUp">Grano:</label>
-            <input type="text" id="beansProduct" name="Granos" class="InputPopUp">
-            <label for="stock" class="LabelPopUp">Stock:</label>
-            <select id="stockProduct" name="stockProduct" class="InputPopUp">
+            <form id="form-details">
+              <label for="nameProduct" class="LabelPopUp">Nombre:</label>
+              <input type="text" id="nameProduct" name="nameProduct" class="InputPopUp">
+              
+              <label for="priceProduct" class="LabelPopUp">Precio:</label>
+              <input type="text" id="priceProduct" name="priceProduct" class="InputPopUp">
+              
+              <label for="beansProduct" class="LabelPopUp">Grano:</label>
+              <input type="text" id="beansProduct" name="beansProduct" class="InputPopUp">
+              
+              <label for="stockProduct" class="LabelPopUp">Stock:</label>
+              <select id="stockProduct" name="stockProduct" class="InputPopUp">
                 <option value="IN STOCK">En stock</option>
                 <option value="OUT OF STOCK">Sin stock</option>
-                <option value="NOT AVAILABLE">No disonible</option>
-            </select>
-            <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
-            
+                <option value="NOT AVAILABLE">No disponible</option>
+              </select>
+              
+              <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
             </form>
     </div>
 

@@ -7,6 +7,7 @@
     <title>Administrador</title>
     <!--Custom CSS-->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../CSS/usersConfig.css">
     <!--Fabicon-->
     <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
     <!--FontAwsome-->
@@ -30,33 +31,41 @@
         </div>
     </section>
 
-    <div id="usuarios">
+    <div class="users-config">
         <h2>Listado de Usuarios</h2>
         <table id="table"></table>
         <div id="popupForm">
             <h2 class="TituloPopUp">Editar Registro</h2>
-            <form id="popupFormulario"></form>
-            <!-- Aquí puedes agregar tus campos de formulario -->
-            <label for="Usuario" class="LabelPopUp">Usuario:</label>
-            <input type="text" id="userName" name="userName" class="InputPopUp" disabled>
-            <label for="Contraseña" class="LabelPopUp">Contraseña:</label>
-            <input type="text" id="userPassword" name="userPassword" class="InputPopUp">
-            <label for="correo" class="LabelPopUp">Correo:</label>
-            <input type="text" id="userEmail" name="userEmail" class="InputPopUp">
-            <label for="Nombres" class="LabelPopUp">Nombres:</label>
-            <input type="text" id="UsersNames" name="UsersNames" class="InputPopUp">
-            <label for="Apellidos" class="LabelPopUp">Apellidos:</label>
-            <input type="text" id="userLastnames" name="userLastnames" class="InputPopUp">
-            <label for="Celular" class="LabelPopUp">Celular:</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" class="InputPopUp">
-            <label for="Rol" class="LabelPopUp">Rol:</label>
-            <select id="userRol" name="userRol" class="InputPopUp">
-                <option value="ADMINISTRADOR">ADMINISTRADOR</option>
-                <option value="CLIENTE">CLIENTE</option>
-              </select>
-            <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
-            
-            </form>
+           <div id="form-details">
+  <form>
+    <label for="Usuario" class="LabelPopUp">Usuario:</label>
+    <input type="text" id="userName" name="userName" class="InputPopUp" disabled>
+    
+    <label for="Contraseña" class="LabelPopUp">Contraseña:</label>
+    <input type="text" id="userPassword" name="userPassword" class="InputPopUp">
+    
+    <label for="correo" class="LabelPopUp">Correo:</label>
+    <input type="text" id="userEmail" name="userEmail" class="InputPopUp">
+    
+    <label for="Nombres" class="LabelPopUp">Nombres:</label>
+    <input type="text" id="UsersNames" name="UsersNames" class="InputPopUp">
+    
+    <label for="Apellidos" class="LabelPopUp">Apellidos:</label>
+    <input type="text" id="userLastnames" name="userLastnames" class="InputPopUp">
+    
+    <label for="Celular" class="LabelPopUp">Celular:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" class="InputPopUp">
+    
+    <label for="Rol" class="LabelPopUp">Rol:</label>
+    <select id="userRol" name="userRol" class="InputPopUp">
+      <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+      <option value="CLIENTE">CLIENTE</option>
+    </select>
+    
+    <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
+  </form>
+</div>
+
     </div>
 
     <script src="../script.js"></script>

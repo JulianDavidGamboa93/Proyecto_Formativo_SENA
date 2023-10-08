@@ -7,6 +7,7 @@
     <title>Administrador</title>
     <!--Custom CSS-->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../CSS/usersConfig.css">
     <!--Fabicon-->
     <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
     <!--FontAwsome-->
@@ -31,33 +32,36 @@
     </section>
 
 
-    <div id="usuarios">
+    <div class="users-config">
         <h2>Listado de Facturas</h2>
         <table id="table"></table>
         <div id="popupForm">
             <h2 class="TituloPopUp">Editar Registro</h2>
-            <form id="popupFormulario"></form>
-            <!-- Aquí puedes agregar tus campos de formulario -->
-            <label for="Usuario" class="LabelPopUp">Usuario:</label>
-            <input type="text" id="Fullname" name="userName" class="InputPopUp" disabled>
-            <label for="direccion" class="LabelPopUp">Direccion:</label>
-            <input type="text" id="Address" name="Address" class="InputPopUp">
-            <label for="Estado" class="LabelPopUp">Estado:</label>
-            <select id="userStatus" name="Estado">
-                <option value="WAITING FOR SHIPPING">Esperando el envio</option>
-                <option value="BEING PREPARED">Preparando</option>
-                <option value="SHIPPED">Enviado</option>
-                <option value="DELIVERED">Entregado</option>
-            </select>
-            <label for="userRefund" class="LabelPopUp">Reembolso</label>
-            <select id="userRefund" name="userRefund" class="InputPopUp">
-                <option value="YES">Si</option>
-                <option value="NO">No</option>
-            </select>
-
-            <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
-
-            </form>
+            <form id="form-details">
+                <!-- Aquí puedes agregar tus campos de formulario -->
+                <label for="Fullname" class="LabelPopUp">Usuario:</label>
+                <input type="text" id="Fullname" name="userName" class="InputPopUp" disabled>
+              
+                <label for="Address" class="LabelPopUp">Direccion:</label>
+                <input type="text" id="Address" name="Address" class="InputPopUp">
+              
+                <label for="userStatus" class="LabelPopUp">Estado:</label>
+                <select id="userStatus" name="Estado" class="InputPopUp">
+                  <option value="WAITING FOR SHIPPING">Esperando el envío</option>
+                  <option value="BEING PREPARED">Preparando</option>
+                  <option value="SHIPPED">Enviado</option>
+                  <option value="DELIVERED">Entregado</option>
+                </select>
+                
+                <label for="userRefund" class="LabelPopUp">Reembolso:</label>
+                <select id="userRefund" name="userRefund" class="InputPopUp">
+                  <option value="YES">Sí</option>
+                  <option value="NO">No</option>
+                </select>
+              
+                <input type="submit" value="Enviar" class="botonPopUp" id="enviarPopUp">
+              </form>
+              
         </div>
 
         <script src="../JS/Facturas.js"></script>

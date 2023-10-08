@@ -1,0 +1,79 @@
+/* Estilos base que se aplicarán en pantallas más grandes */
+.users-config h2 {
+    text-align: center;
+    padding: 30px;
+}
+
+#table {
+    width: 650px;
+    margin-top: 30px;
+    margin-left: 31%;
+    border: 2px solid white;
+}
+
+#table th {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 5px;
+    border: 2px solid white;
+    font-weight: bold;
+    color: teal;
+}
+
+#table td {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media screen and (max-width: 600px) {
+    #table {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #table th,
+    #table td {
+        padding: 10px; /* Aumenta el espacio entre celdas en pantallas pequeñas */
+    }
+
+    #usuarios h2 {
+        padding: 10px; /* Cambia el espaciado del título en pantallas pequeñas */
+    }
+
+    /* Estilos específicos para la tabla en pantallas pequeñas */
+    .table {
+        border: 0px;
+    }
+    .table caption {
+        font-size: 22px;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+    }
+    .table th,
+    .table td {
+        font-size: 12px;
+    }
+    .table td {
+        display: block;
+        border-bottom: 1px solid #ddd;
+        text-align: right;
+    }
+    .table td:last-child {
+        border-bottom: 0px;
+    }
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+}
