@@ -7,10 +7,14 @@
     <title>Carrito</title>
     <!--Custom CSS-->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../CSS/Usercart.css">
     <!--Fabicon-->
     <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
     <!--FontAwsome-->
     <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
 </head>
 
 <body>
@@ -40,41 +44,17 @@
     </section>
 
     <section id="cart" class="section-p1">
-        <table width="100%">
+        <table id="cart-table">
             <thead>
                 <tr>
-                    <td></td>
-                    <td>Nombre</td>
-                    <td>Precio</td>
-                    <td>Cantidad</td>
-                    <td>Subtotal</td>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <!--<td><img src="../Img/MarcasBlancas/Single product/2.jpg" alt=""></td>-->
-                    <td>Cafe marca blanca Colombia 100% Organico</td>
-                    <td>$6.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>6.000</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <!--<td><img src="../Img/MarcasBlancas/Single product/2.jpg" alt=""></td>-->
-                    <td>Cafe marca blanca Colombia 100% Organico</td>
-                    <td>$6.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>6.000</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <!--<td><img src="../Img/MarcasBlancas/Single product/2.jpg" alt=""></td>-->
-                    <td>Cafe marca blanca Colombia 100% Organico</td>
-                    <td>$6.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>6.000</td>
-                </tr>
+                <!-- Aquí se generará la tabla dinámicamente -->
             </tbody>
         </table>
     </section>
@@ -89,23 +69,20 @@
         </div>
 
         <div id="Subtotal">
-            <h3>Total del carrito</h3>
-            <table>
-                <tr>
-                    <td>Sub Total</td>
-                    <td>$ 18.000 COP</td>
-                </tr>
-                <tr>
-                    <td>Envio</td>
-                    <td>Acordar con el vendedor</td>
-                </tr>
-                <tr>
-                    <td><strong>Total</strong></td>
-                    <td><strong>$ 18.000 COP</strong></td>
-                </tr>
+            <table id="total-table">
+                <thead>
+                    <tr>
+                        <th>Total</th> <!-- Encabezado actualizado -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrará el total de compra con JavaScript -->
+                </tbody>
             </table>
-            <button class="normal">Proceder al pago</button>
+
         </div>
+
+        <button id="generate-pdf-button">Generar  la Factura</button>
     </section>
 
     <footer class="section-p1">
@@ -159,6 +136,13 @@
     </footer>
     <!--Custom JS script-->
     <script src="../script.js"></script>
+    <script type="module">
+        import jsPDF from '../../Backend/API_REST_PROYECTO_FORMATIVO/node_modules/'; // Ruta relativa desde UserCart.html
+        // Resto de tu código...
+      </script>
+    <script src="../JS/UserCart.js"></script>
+
+
 </body>
 
 </html>
