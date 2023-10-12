@@ -27,6 +27,23 @@ function showFetch(data) {
     adressHeader.textContent = "Direccion";
     headerRow.appendChild(adressHeader)
     
+    const productHeader = document.createElement("th");
+    productHeader.textContent = "Producto";
+    headerRow.appendChild(productHeader)
+
+    const priceHeader = document.createElement("th");
+    priceHeader.textContent = "Precio";
+    headerRow.appendChild(priceHeader)
+
+    const quantityHeader = document.createElement("th");
+    quantityHeader.textContent = "Cantidad";
+    headerRow.appendChild(quantityHeader)
+
+    const totalpriceHeader = document.createElement("th");
+    totalpriceHeader.textContent = "Total";
+    headerRow.appendChild(totalpriceHeader)
+    
+    
 
     const statusHeader = document.createElement("th");
     statusHeader.textContent = "Estado";
@@ -51,6 +68,22 @@ function showFetch(data) {
         const AddressUser = document.createElement("td");
         AddressUser.textContent = element.userAddress;
         Row.appendChild(AddressUser);
+
+        const ProductUser = document.createElement("td");
+        ProductUser.textContent = element.Product;
+        Row.appendChild(ProductUser);
+
+        const ProductPrice = document.createElement("td");
+        ProductPrice.textContent = element.Price;
+        Row.appendChild(ProductPrice)
+
+        const ProductQuantity = document.createElement("td");
+        ProductQuantity.textContent = element.Quantity;
+        Row.appendChild(ProductQuantity)
+
+        const ProductTotal = document.createElement("td");
+        ProductTotal.textContent = element.TotalPrice;
+        Row.appendChild(ProductTotal)
         
         const statusUser = document.createElement("td");
         statusUser.textContent = element.Shipping;
@@ -74,13 +107,21 @@ function showFetch(data) {
             var popup = document.getElementById("popupForm");
             const input1 = document.getElementById("Fullname");
             const input2 = document.getElementById("Address");
-            const input3 = document.getElementById("userStatus");
-            const input4 = document.getElementById("userRefund");
+            const input3 = document.getElementById('Product');
+            const input4 = document.getElementById('Price');
+            const input5 = document.getElementById('Quantity');
+            const input6 = document.getElementById('Total');
+            const input7 = document.getElementById("userStatus");
+            const input8 = document.getElementById("userRefund");
 
             input1.value = element.Fullname;
             input2.value = element.userAddress;
-            input3.value = element.Shipping;
-            input4.value = element.Refund;
+            input3.value = element.Product;
+            input4.value = element.Price;
+            input5.value = element.Quantity;
+            input6.value = element.TotalPrice;
+            input7.value = element.Shipping;
+            input8.value = element.Refund;
             popup.style.display = 'block';
         }
 
@@ -125,6 +166,10 @@ function showFetch(data) {
 
 const fullnameUpdate = document.getElementById("Fullname");
 const addressUpdate = document.getElementById("Address");
+const productUpdate = document.getElementById('Product');
+const priceUpdate = document.getElementById('Price');
+const quantityUpdate = document.getElementById('Quantity');
+const totalUpdate = document.getElementById('Total');
 const statusUpdate = document.getElementById("userStatus");
 const refundUpdate = document.getElementById("userRefund");
 
@@ -137,6 +182,10 @@ async function updateRegistro(event) {
         const dataUpdate = {
             Fullname: fullnameUpdate.value,
             userAddress: addressUpdate.value,
+            Product: productUpdate.value,
+            Price: priceUpdate.value,
+            Quantity: quantityUpdate.value,
+            TotalPrice: totalUpdate.value,
             Shipping: statusUpdate.value,
             Refund: refundUpdate.value,
         };

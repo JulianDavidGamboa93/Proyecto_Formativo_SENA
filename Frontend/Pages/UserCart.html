@@ -12,7 +12,7 @@
     <link rel="icon" href="../Img/Logos/Bellolino Logo.png" type="image/x-icon">
     <!--FontAwsome-->
     <script src="https://kit.fontawesome.com/2538a9edca.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>-->
 
 
 </head>
@@ -61,17 +61,16 @@
 
     <section id="cart-add" class="section-p1">
         <div id="cupon">
-            <h3>Cupones de descuentos</h3>
+            <h3>Datos de envio</h3>
             <div>
-                <input type="text" placeholder="Ingresar cupon">
-                <button class="normal">Usar</button>
+                <input id="fullname" type="text" placeholder="Nombre completo">
+                <input id="Address" type="text" placeholder="Direccion">
             </div>
         </div>
 
         <div id="Subtotal">
             <table id="total-table">
                 <thead>
-                    <tr>
                         <th>Total</th> <!-- Encabezado actualizado -->
                     </tr>
                 </thead>
@@ -82,7 +81,8 @@
 
         </div>
 
-        <button id="generate-pdf-button">Generar  la Factura</button>
+        <!--<button id="generate-pdf-button" class="normal">Hacer pedido</button>-->
+        <button id="EnivarPedido" class="normal">Hacer pedido</button>
     </section>
 
     <footer class="section-p1">
@@ -136,11 +136,12 @@
     </footer>
     <!--Custom JS script-->
     <script src="../script.js"></script>
-    <script type="module">
+    <!--<script type="module">
         import jsPDF from '../../Backend/API_REST_PROYECTO_FORMATIVO/node_modules/'; // Ruta relativa desde UserCart.html
-        // Resto de tu código...
+        // Resto de tu código...-->
       </script>
     <script src="../JS/UserCart.js"></script>
+    <script src="../JS/Invoice.js"></script>
 
 
 </body>

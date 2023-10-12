@@ -31,25 +31,17 @@ CREATE TABLE products (
     UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE cart (
-    ID_Cart INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    login_id INT,
-    products_id INT,
-    Quantity INT NOT NULL,
-    Unitprice INT NOT NULL,
-    Dateadded TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    Cartstatus ENUM('IN PROGRESS', 'COMPLETED') NOT NULL DEFAULT 'IN PROGRESS',
-    UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
 CREATE TABLE invoice (
     ID_Invoice INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     login_id INT,
     users_id INT,
     products_id INT,
     Fullname VARCHAR(40) NOT NULL,
-    userAddress VARCHAR(30) NOT NULL, -- Cambié "userAdress" a "userAddress" y usé VARCHAR en lugar de "="
-    PurchaseDate DATETIME NOT NULL, -- Cambié "Purchasedate" a "PurchaseDate"
+    userAddress VARCHAR(30) NOT NULL, -- Cambié "userAdress" a "userAddress" y usé VARCHAR en lugar de "=",
+    Product VARCHAR(100),
+    Price INT,
+    Quantity INT,
+    TotalPrice INT,
     Shipping ENUM('WAITING FOR SHIPPING', 'BEING PREPARED', 'SHIPPED', 'DELIVERED') NOT NULL DEFAULT 'BEING PREPARED',
     Refund ENUM('YES', 'NO') NOT NULL DEFAULT 'NO',
     CREATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
