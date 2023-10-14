@@ -713,6 +713,19 @@ footer .copyright{
   font-weight: 600;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+}
+
+.button-container button{
+  background-color: #088178;
+  color: white;
+  padding: 12px 20px;
+}
+
+
 
 /* Single Product */
 
@@ -1210,6 +1223,12 @@ padding: 18px 0;
 #cart{
   overflow-x: auto;
 }
+
+.button-cart-container {
+  display: flex;
+  justify-content: center;
+}
+
 
 
 }

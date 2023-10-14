@@ -1,8 +1,7 @@
-const nombreCompleto = document.getElementById('fullname');
-const direccionUsuario = document.getElementById('Address');
-
-
+let grandTotal = 0;
 document.addEventListener('DOMContentLoaded', () => {
+
+
     const urlParams = new URLSearchParams(window.location.search);
     const cartDataJSON = urlParams.get('cartData');
     const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
@@ -13,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalTable = document.getElementById('total-table');
     const totalTbody = totalTable.querySelector('tbody');
 
-    let grandTotal = 0;
-
+    
+    console.log(cartDataJSON);
     for (const productName in cartData) {
         if (cartData.hasOwnProperty(productName)) {
             const product = cartData[productName];
@@ -55,8 +54,53 @@ document.addEventListener('DOMContentLoaded', () => {
     totalRow.appendChild(grandTotalCell);
 
     totalTbody.appendChild(totalRow);
-
-    
-
 });
 
+const nombreCompleto = document.getElementById('fullname');
+const direccionUsuario = document.getElementById('Address');
+const urlParams = new URLSearchParams(window.location.search);
+const cartDataJSON = urlParams.get('cartData');
+    const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
+
+document.getElementById('EnivarPedido').addEventListener('click', RegistroCompra);
+
+async function RegistroCompra(event) {
+    event.preventDefault();
+    for (const productName in cartData) {
+        if (cartData.hasOwnProperty(productName)) {
+            console.log("Aqui estoy");
+            const _invoice = cartData[productName];
+            console.log(_invoice);
+           
+                const url = "http://localhost:3000/api/invoice/Insert";
+                const data = {
+                    Fullname: nombreCompleto.value,
+                    userAddress: direccionUsuario.value,
+                    Product: productName,
+                    Price: _invoice.price,
+                    Quantity: _invoice.quantity,
+                    TotalPrice: grandTotal
+                };
+                const requestOptions = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                };
+                const getFetch = await fetch(url, requestOptions)
+                const Responses = await getFetch.json();
+                console.log(Responses);
+                if (Responses.status === 200) {
+                    alert('El pedido ha sido exitoso, el vendedor se comunicara con usted para acordar el metodo de pago y el metodo de envio');
+                    window.open('indexUsers.html', '_self');
+                }else {
+                    alert('Error de api o de codigo');
+                }
+                try {} catch (error) {
+        
+            }
+        }
+    }
+    
+}
