@@ -147,6 +147,8 @@ proceedBtn.addEventListener('click', () => {
     const tableRows = tableCart.querySelectorAll('tr');
 
     tableRows.forEach((row, index) => {
+        console.log(tableRows);
+        console.log(row, index);
         if (index !== 0) {
             const cells = row.querySelectorAll('td');
             const productName = cells[0].textContent; // Agrega esta línea
@@ -154,7 +156,7 @@ proceedBtn.addEventListener('click', () => {
             const productQuantity = cells[2].textContent;
             const productGrams = cells[3].textContent; // Agrega esta línea
             const productGrain = cells[4].textContent; // Agrega esta línea
-
+            console.log(cartData[productName]);
             cartData[productName] = {
                 price: productPrice,
                 quantity: productQuantity,

@@ -39,19 +39,6 @@
         "link": "SingleProducts/SingleProduct3.html"
     },
     {
-        "id": 4,
-        "tipo": "Cafe tostado",
-        "nombre": "Cafe Tostado con notas de chocolate y almendras 320gr",
-        "precio": 7800,
-        "gramos": 320,
-        "grano": "Arabica",
-        "cantidad": 1,
-        "imagenSrc": "../Img/MarcasBlancas/Single product/4.jpg",
-        "descripcion": "Cafe Tostado con notas de chocolate y almendras 320gr",
-        "estrellas": 5,
-        "link": "SingleProducts/SingleProduct4.html"
-    },
-    {
         "id": 5,
         "tipo": "Cafe tostado",
         "nombre": "Cafe Tostado con notas de chocolate y almendras 320gr",
@@ -244,18 +231,5 @@
         "descripcion": "Cafe en granos Blend Arabica y Robusta 450gr",
         "estrellas": 5,
         "link": "SingleProducts/SingleProduct19.html"
-    },
-    {
-        "id": 20,
-        "tipo": "Cafe en granos",
-        "nombre": "Cafe en granos Blend 20% Arabica 80% Robusta 350gr",
-        "precio": 10900,
-        "gramos": 350,
-        "grano": "Blend",
-        "cantidad": 1,
-        "imagenSrc": "../Img/MarcasBlancas/Single product/20.jpg",
-        "descripcion": "Cafe en granos Blend 20% Arabica 80% Robusta 350gr",
-        "estrellas": 5,
-        "link": "SingleProducts/SingleProduct20.html"
     }
 ]

@@ -60,13 +60,15 @@ const nombreCompleto = document.getElementById('fullname');
 const direccionUsuario = document.getElementById('Address');
 const urlParams = new URLSearchParams(window.location.search);
 const cartDataJSON = urlParams.get('cartData');
-    const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
+const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
 
 document.getElementById('EnivarPedido').addEventListener('click', RegistroCompra);
-
+let compras;
 async function RegistroCompra(event) {
     event.preventDefault();
     for (const productName in cartData) {
+        console.log(productName);
+        console.log(cartData);
         if (cartData.hasOwnProperty(productName)) {
             console.log("Aqui estoy");
             const _invoice = cartData[productName];
@@ -89,18 +91,20 @@ async function RegistroCompra(event) {
                     body: JSON.stringify(data),
                 };
                 const getFetch = await fetch(url, requestOptions)
-                const Responses = await getFetch.json();
-                console.log(Responses);
-                if (Responses.status === 200) {
-                    alert('El pedido ha sido exitoso, el vendedor se comunicara con usted para acordar el metodo de pago y el metodo de envio');
-                    window.open('indexUsers.html', '_self');
-                }else {
-                    alert('Error de api o de codigo');
-                }
+                compras = await getFetch.json();
+    
                 try {} catch (error) {
         
             }
+
         }
+    }
+    console.log(compras);
+    if (compras.status === 200) {
+        alert('El pedido ha sido exitoso, el vendedor se comunicara con usted para acordar el metodo de pago y el metodo de envio');
+        window.open('indexUsers.html', '_self');
+    }else {
+        alert('Error de api o de codigo');
     }
     
 }
