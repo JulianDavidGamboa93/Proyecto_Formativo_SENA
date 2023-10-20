@@ -907,8 +907,8 @@ footer .copyright{
   align-items: flex-start;
 }
 
-#form-details form input,
-#form-details form textarea{
+#form-details form p input,
+#form-details form p textarea{
   width: 100%;
   padding: 12px 15px;
   outline: none;
