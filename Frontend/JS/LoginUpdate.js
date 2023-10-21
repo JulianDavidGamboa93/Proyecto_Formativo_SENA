@@ -34,8 +34,13 @@ async function loginUpdate(event) {
         const UpdateLog = await fetch(url, requestOption);
         const responses = await UpdateLog.json();
         console.log(data, responses);
-        if (responses.status === 200) {
-            alert("Se ha recuperado su contraseña de manera exitosa");
+
+        // Verificar si el status es 200 y affectedRows es 0
+        if (responses.status === 200 && responses.affectedRows === 0) {
+            alert('Usuario no encontrado. Asegúrese de que el nombre de usuario esté escrito correctamente.');
+            return; // Salir de la función en este caso
+            
+        }else if (responses.status === 200) {
             try {
                 const urlWhere = "http://localhost:3000/api/login/Where";
                 const dataWhere = {
@@ -54,8 +59,12 @@ async function loginUpdate(event) {
                 console.log(responsesWhere)
                 if (responsesWhere?.data[0]?.Rol === "ADMINISTRADOR") {
                     window.open("Sesion.html", "_self")
+                    alert("Se ha recuperado su contraseña de manera exitosa");
                 } else if (responsesWhere?.data[0]?.Rol === "CLIENTE") {
                     window.open("Sesion.html", "_self")
+                    alert("Se ha recuperado su contraseña de manera exitosa");
+                }else{
+                    alert('Usuario no encontrado. Asegúrese de que el nombre de usuario esté escrito correctamente.');
                 }
             } catch (error) {
                 // Manejo de errores

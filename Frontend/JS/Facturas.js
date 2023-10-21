@@ -26,7 +26,7 @@ function showFetch(data) {
     const adressHeader = document.createElement("th");
     adressHeader.textContent = "Direccion";
     headerRow.appendChild(adressHeader)
-    
+
     const productHeader = document.createElement("th");
     productHeader.textContent = "Producto";
     headerRow.appendChild(productHeader)
@@ -42,8 +42,8 @@ function showFetch(data) {
     const totalpriceHeader = document.createElement("th");
     totalpriceHeader.textContent = "Total";
     headerRow.appendChild(totalpriceHeader)
-    
-    
+
+
 
     const statusHeader = document.createElement("th");
     statusHeader.textContent = "Estado";
@@ -53,12 +53,12 @@ function showFetch(data) {
     refundHeader.textContent = "Reembolso";
     headerRow.appendChild(refundHeader);
 
-    
+
     table.appendChild(headerRow);
 
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
-        
+
         const Row = document.createElement("tr");
 
         const fullName = document.createElement("td");
@@ -84,7 +84,7 @@ function showFetch(data) {
         const ProductTotal = document.createElement("td");
         ProductTotal.textContent = element.TotalPrice;
         Row.appendChild(ProductTotal)
-        
+
         const statusUser = document.createElement("td");
         statusUser.textContent = element.Shipping;
         Row.appendChild(statusUser);
@@ -150,16 +150,16 @@ function showFetch(data) {
                 if (responses.status === 200) {
                     alert("Se Elimino de manera correcta del registro");
                     getFetch();
-                }else {
+                } else {
                     alert("Error de api o ningun registro encontrado");
                 }
             } catch (error) {
-                
+
             }
         }
 
         table.appendChild(Row);
-        
+
     }
     document.body.table?.appendChild(table);
 }
@@ -177,7 +177,7 @@ document.getElementById("enviarPopUp").addEventListener('click', updateRegistro)
 
 async function updateRegistro(event) {
     event.preventDefault();
-    
+    try {
         const urlUpdate = "http://localhost:3000/api/invoice/Update";
         const dataUpdate = {
             Fullname: fullnameUpdate.value,
@@ -204,10 +204,10 @@ async function updateRegistro(event) {
         if (Responses.status === 200) {
             alert("Registro editado correctamente")
             getFetch();
-        }else {
-            alert ("Error de api o al actualizar el registro");
+        } else {
+            alert("Error de api o al actualizar el registro");
         }
-        try {} catch (error) {
+    } catch (error) {
         console.log("Error: ", error);
     }
 }

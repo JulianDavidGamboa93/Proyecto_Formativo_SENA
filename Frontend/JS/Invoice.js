@@ -28,6 +28,6 @@ async function RegistroCompra(event) {
             alert('Error de api o de codigo');
         }
     } catch (error) {
-
+        console.error(error);
     }
 }

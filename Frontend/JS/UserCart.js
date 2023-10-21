@@ -1,59 +1,56 @@
 let grandTotal = 0;
 document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const cartDataJSON = urlParams.get('cartData');
+  const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
 
+  const cartTable = document.getElementById('cart-table');
+  const tbody = cartTable.querySelector('tbody');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const cartDataJSON = urlParams.get('cartData');
-    const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
+  const totalTable = document.getElementById('total-table');
+  const totalTbody = totalTable.querySelector('tbody');
 
-    const cartTable = document.getElementById('cart-table');
-    const tbody = cartTable.querySelector('tbody');
+  console.log(cartDataJSON);
+  for (const productName in cartData) {
+    if (cartData.hasOwnProperty(productName)) {
+      const product = cartData[productName];
+      const row = document.createElement('tr');
 
-    const totalTable = document.getElementById('total-table');
-    const totalTbody = totalTable.querySelector('tbody');
+      const productNameCell = document.createElement('td');
+      productNameCell.textContent = productName;
 
-    
-    console.log(cartDataJSON);
-    for (const productName in cartData) {
-        if (cartData.hasOwnProperty(productName)) {
-            const product = cartData[productName];
-            const row = document.createElement('tr');
+      const productPriceCell = document.createElement('td');
+      productPriceCell.textContent = product.price;
 
-            const productNameCell = document.createElement('td');
-            productNameCell.textContent = productName;
+      const productQuantityCell = document.createElement('td');
+      productQuantityCell.textContent = product.quantity;
 
-            const productPriceCell = document.createElement('td');
-            productPriceCell.textContent = product.price;
+      const totalPriceCell = document.createElement('td');
+      const totalPrice = product.price * product.quantity;
+      totalPriceCell.textContent = totalPrice;
+      grandTotal += totalPrice;
 
-            const productQuantityCell = document.createElement('td');
-            productQuantityCell.textContent = product.quantity;
+      row.appendChild(productNameCell);
+      row.appendChild(productPriceCell);
+      row.appendChild(productQuantityCell);
+      row.appendChild(totalPriceCell);
 
-            const totalPriceCell = document.createElement('td');
-            const totalPrice = product.price * product.quantity;
-            totalPriceCell.textContent = totalPrice;
-            grandTotal += totalPrice;
-
-            row.appendChild(productNameCell);
-            row.appendChild(productPriceCell);
-            row.appendChild(productQuantityCell);
-            row.appendChild(totalPriceCell);
-
-            tbody.appendChild(row);
-        }
+      tbody.appendChild(row);
     }
+  }
 
-    // Agregar la fila para mostrar el gran total
-    const totalRow = document.createElement('tr');
-    const totalLabelCell = document.createElement('td');
-    totalLabelCell.textContent = 'Total';
-    totalLabelCell.setAttribute('colspan', '3');
-    totalRow.appendChild(totalLabelCell);
+  // Agregar la fila para mostrar el gran total
+  const totalRow = document.createElement('tr');
+  const totalLabelCell = document.createElement('td');
+  totalLabelCell.textContent = 'Total';
+  totalLabelCell.setAttribute('colspan', '3');
+  totalRow.appendChild(totalLabelCell);
 
-    const grandTotalCell = document.createElement('td');
-    grandTotalCell.textContent = grandTotal;
-    totalRow.appendChild(grandTotalCell);
+  const grandTotalCell = document.createElement('td');
+  grandTotalCell.textContent = grandTotal;
+  totalRow.appendChild(grandTotalCell);
 
-    totalTbody.appendChild(totalRow);
+  totalTbody.appendChild(totalRow);
 });
 
 const nombreCompleto = document.getElementById('fullname');
@@ -65,46 +62,58 @@ const cartData = JSON.parse(decodeURIComponent(cartDataJSON));
 document.getElementById('EnivarPedido').addEventListener('click', RegistroCompra);
 let compras;
 async function RegistroCompra(event) {
-    event.preventDefault();
-    for (const productName in cartData) {
-        console.log(productName);
-        console.log(cartData);
-        if (cartData.hasOwnProperty(productName)) {
-            console.log("Aqui estoy");
-            const _invoice = cartData[productName];
-            console.log(_invoice);
-           
-                const url = "http://localhost:3000/api/invoice/Insert";
-                const data = {
-                    Fullname: nombreCompleto.value,
-                    userAddress: direccionUsuario.value,
-                    Product: productName,
-                    Price: _invoice.price,
-                    Quantity: _invoice.quantity,
-                    TotalPrice: grandTotal
-                };
-                const requestOptions = {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                };
-                const getFetch = await fetch(url, requestOptions)
-                compras = await getFetch.json();
-    
-                try {} catch (error) {
-        
-            }
+  event.preventDefault();
 
-        }
+  // Función para validar el formulario
+  function validateForm() {
+    if (
+      nombreCompleto.value.trim() === "" ||
+      direccionUsuario.value.trim() === ""
+    ) {
+      alert("Debes llenar todos los campos.");
+      return false; // Evitar que el formulario se envíe
     }
-    console.log(compras);
-    if (compras.status === 200) {
-        alert('El pedido ha sido exitoso, el vendedor se comunicara con usted para acordar el metodo de pago y el metodo de envio');
-        window.open('indexUsers.html', '_self');
-    }else {
-        alert('Error de api o de codigo');
+    return true;
+  }
+
+  // Validar el formulario antes de continuar
+  if (!validateForm()) {
+    return;
+  }
+
+  for (const productName in cartData) {
+    if (cartData.hasOwnProperty(productName)) {
+      const _invoice = cartData[productName];
+      try {
+        const url = "http://localhost:3000/api/invoice/Insert";
+        const data = {
+          Fullname: nombreCompleto.value,
+          userAddress: direccionUsuario.value,
+          Product: productName,
+          Price: _invoice.price,
+          Quantity: _invoice.quantity,
+          TotalPrice: grandTotal
+        };
+        const requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        };
+        const getFetch = await fetch(url, requestOptions);
+        compras = await getFetch.json();
+      } catch (error) {
+        console.error(error);
+      }
     }
-    
+  }
+
+  console.log(compras);
+  if (compras.status === 200) {
+    alert('El pedido ha sido exitoso, el vendedor se comunicará con usted para acordar el método de pago y el método de envío');
+    window.open('indexUsers.html', '_self');
+  } else {
+    alert('Error de API o de código');
+  }
 }

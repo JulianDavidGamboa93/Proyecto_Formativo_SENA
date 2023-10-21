@@ -35,12 +35,12 @@ function showFetch(data) {
     stockHeader.textContent = "Stock";
     headerRow.appendChild(stockHeader);
 
-    
+
     table.appendChild(headerRow);
 
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
-        
+
         const Row = document.createElement("tr");
 
         const productName = document.createElement("td");
@@ -50,7 +50,7 @@ function showFetch(data) {
         const priceProduct = document.createElement("td");
         priceProduct.textContent = element.Price;
         Row.appendChild(priceProduct);
-        
+
         const beanProduct = document.createElement("td");
         beanProduct.textContent = element.Beantype;
         Row.appendChild(beanProduct);
@@ -70,19 +70,19 @@ function showFetch(data) {
         function Actualizar(event) {
             event.preventDefault();
             var popup = document.getElementById("popupForm");
-            
+
             const input1 = document.getElementById("nameProduct");
             const input2 = document.getElementById("priceProduct");
             const input3 = document.getElementById("beansProduct");
             const input4 = document.getElementById("stockProduct");;
-            
+
 
             //input1.value = element.ID_Login;
             input1.value = element.Productname;
             input2.value = element.Price;
             input3.value = element.Beantype;
             input4.value = element.Stock;
-            
+
             popup.style.display = 'block';
         }
 
@@ -111,16 +111,16 @@ function showFetch(data) {
                 if (responses.status === 200) {
                     alert("Se Elimino de manera correcta del registro");
                     getFetch();
-                }else {
+                } else {
                     alert("Error de api o ningun registro encontrado");
                 }
             } catch (error) {
-                
+                console.error(error);
             }
         }
 
         table.appendChild(Row);
-        
+
     }
     document.body.table?.appendChild(table);
 }
@@ -135,16 +135,17 @@ document.getElementById("enviarPopUp").addEventListener('click', updateRegistro)
 
 async function updateRegistro(event) {
     event.preventDefault();
-    
-        const urlUpdate = "http://localhost:3000/api/products/Update";
-        const dataUpdate = {
-            Productname: productUpdate.value,
-            Price: priceUpdate.value,
-            Beantype: beanUpdate.value,
-            Stock: stockUpdate.value,
-            
-        };
-        console.log(dataUpdate)
+
+    const urlUpdate = "http://localhost:3000/api/products/Update";
+    const dataUpdate = {
+        Productname: productUpdate.value,
+        Price: priceUpdate.value,
+        Beantype: beanUpdate.value,
+        Stock: stockUpdate.value,
+
+    };
+    console.log(dataUpdate)
+    try {
         const requestOptions = {
             method: "PATCH",
             headers: {
@@ -159,10 +160,10 @@ async function updateRegistro(event) {
         if (Responses.status === 200) {
             alert("Registro editado correctamente")
             getFetch();
-        }else {
-            alert ("Error de api o al actualizar el registro");
+        } else {
+            alert("Error de api o al actualizar el registro");
         }
-        try {} catch (error) {
+    } catch (error) {
         console.log("Error: ", error);
     }
 }
