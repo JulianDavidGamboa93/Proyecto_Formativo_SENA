@@ -27,6 +27,27 @@
     border: 2px solid white;
 }
 
+#form-detaills form{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #form-detaills form  input,
+  #form-detaills form  textarea{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin: 20px;
+    border:  1px solid #e1e1e1;
+  }
+  
+  #form-detaills form button{
+    background-color: #088178;
+    color: white;
+  }
+
 /* Estilos para pantallas más pequeñas (responsive) */
 @media screen and (max-width: 600px) {
     #table {
